@@ -3,19 +3,36 @@ import Button from "./trunks-ui/button/button";
 import Select from "./trunks-ui/select/select";
 import Card from "./trunks-ui/card/card"
 import { RiSettings3Fill, RiEdit2Fill, RiAddCircleFill } from 'react-icons/ri';
+import { Children, Component } from "react";
 
 export default function App() {
+
+function handleOnClick(buttonName: object) {
+  console.log(`Button ${buttonName} clicked!`)
+}
+
   //comment
   return (
     <div className="App">
-      <div className="button-holder">
+      <div className="display-box">
+        <div className="display-box-viewer">
         <Button>Default Button</Button>
-        <Button type="primary">Primary Button</Button>
+        <Button icon={<RiAddCircleFill />} type="primary">Primary Button</Button>
         <Button type="danger">Danger Button</Button>
         <Button type="dashed">Dashed Button</Button>
-        <Button type="disabled">Disabled Button</Button>
+        <Button disabled>Disabled Button</Button>
         <Button type="text">Text Button</Button>
         </div>
+        <div className="display-box-description">
+          <h3>Type</h3>
+          Buttons come in 6 types, <code>primary</code>, <code>default</code>
+        </div>
+      </div>
+      <div className="display-box">
+        <Button size="small">Small Button</Button>
+        <Button size="default">Default Button</Button>
+        <Button size="large">Large Button</Button>
+      </div>
       
       <Select
             placeholder="Choose..."
