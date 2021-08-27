@@ -1,5 +1,5 @@
 {
-  "name": "react-trunks-ui",
+  "name": "Eli",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,5 +40,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "none",
+  "main": "index.js",
+  "repository": "https://github.com/EliWimmer/react-trunks-ui.git",
+  "author": "ELI <eliwimm@gmail.com>",
+  "license": "MIT"
 }

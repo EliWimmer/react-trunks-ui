@@ -1,25 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 .App {
   font-family: sans-serif;
   background: #ffffff;
   height: 100vh;
   width: 100vw;
-  padding: 20px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 24px;
+  font-family: 'Inter', sans-serif;
 }
 
-.column1 {
-  flex-grow: 1;
+.side-menu {
+  width: 320px;
+  background: #FAFAFA;
 }
-.column2 {
+.content-area {
   flex-grow: 1;
+  padding: 48px 48px;
 }
-.column3 {
-  flex-grow: 1;
+
+.content-area > * {
+  margin: 24px;
 }
+
 
 html {
   background: #ffffff;
@@ -44,7 +49,10 @@ body {
 .display-box-viewer {
   display: flex;
   flex-wrap: wrap;
-  padding: 16px 16px;
+  flex-grow: 1;
+  padding: 32px 16px;
+  align-items: center;
+  justify-content: center;
 }
 .display-box-viewer > * {
  margin: 8px;
