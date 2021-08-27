@@ -1,0 +1,40 @@
+.App {
+  font-family: sans-serif;
+  background: #FAFAFA;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.column1 {
+  flex-grow: 1;
+}
+.column2 {
+  flex-grow: 1;
+}
+.column3 {
+  flex-grow: 1;
+}
+
+html {
+  background: #fafafa;
+  height: 100vh;
+}
+
+body {
+  margin: 0px;
+}
+
+.button-holder {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.button-holder > * {
+  margin-top: 8px;
+}

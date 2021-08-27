@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@keyframes cardClick {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(30, 136, 229, 60%), 0px 2px 4px 0px rgba(0, 0, 0, 4%);
+  }
+  50% {
+    box-shadow: 0px 0px 0px 3px rgba(30, 136, 229, 30%), 0px 2px 4px 0px rgba(0, 0, 0, 4%);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 6px rgba(0, 0, 0, 0%), 0px 2px 4px 0px rgba(0, 0, 0, 4%);
+  }
+}
+
+.card {
+  height: fit-content;
+  width: 300px;
+  background: white;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 4%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: "Inter", sans-serif;
+  text-align: left;
+  transition-duration: 0.5s;
+}
+.no-card {
+  display: none;
+}
+.card-cover {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.card-cover img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.card.hover-true:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 4%);
+  border: 1px solid #1976d2;
+}
+
+.card.clickable-true {
+  cursor: pointer;
+}
+
+.card.clickable-true[clicked-="true"] {
+  animation: cardClick;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+}
+
+
+.card-header {
+  font-weight: 600;
+  color: #424242;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 16px;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+}
+
+.card-header[hover-="1"] {
+  animation: cardHover;
+  animation-duration: 1s;
+}
+
+.card-header > * {
+  flex-grow: 1;
+}
+
+.extra {
+  font-weight: 400;
+  text-align: right;
+  letter-spacing: 0px;
+  color: #757575;
+  font-size: 14px;
+}
+
+.card-content {
+  padding: 16px 16px 8px 16px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #424242;
+}
+
+.card-description {
+  font-size: 12px;
+  color: #757575;
+  padding: 0px 8px 16px 16px;
+}
+card.hover {
+  background: red;
+}
+
+.card-buttons-container {
+  display: flex;
+  box-sizing: border-box;
+  height: 48px;
+  align-items: center;
+  justify-items: center;
+  border-top: 1px solid #e0e0e0;
+
+}
+
+.card-buttons {
+  flex-grow: 1;
+  font-size: 14px;
+  letter-spacing: .5px;
+  background: white;
+  color: #616161;
+  border: 0px;
+  cursor: pointer;
+  height: 24px;
+  box-sizing: border-box;
+}
+
+.card-buttons:hover {
+  color: #42A5F5;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+
+.card-buttons:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+  border-radius: 0px 0px 0px 4px;
+
+}
