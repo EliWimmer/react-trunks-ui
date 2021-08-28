@@ -2,7 +2,9 @@
 
 .App {
 height: 100vh;
-margin: 16px;
+padding: 16px;
+box-sizing: border-box;
+background-color: #FAFAFA;
 }
 
 .side-menu {
@@ -12,9 +14,11 @@ margin: 16px;
 .content-area {
   flex-grow: 1;
   padding: 48px 48px;
+  box-sizing: border-box;
 }
 .content-area > * {
-  margin: 24px;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 html {

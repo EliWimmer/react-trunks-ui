@@ -44,15 +44,16 @@ export const Text: FC<TextProps> = ({
     children,
 }) => {
 	return (
-		<span
-			className={`text 
+		<>
+		{!code &&
+			<span
+			className={`trunks-text 
             secondary-${secondary} 
             success-${success} 
             warning-${warning} 
             danger-${danger} 
-            disabled-${disabled} 
-            highlight-${highlight} 
-            code-${code} 
+            disabledtext-${disabled} 
+            highlight-${highlight}
             keyboard-${keyboard} 
             underline-${underline} 
             strike-${strike} 
@@ -60,5 +61,10 @@ export const Text: FC<TextProps> = ({
             italic-${italic}`}>
 			{children}
 		</span>
+		}
+		{code &&
+		<code className="trunks-code">{children}</code>
+		}
+		</>
 	);
 };

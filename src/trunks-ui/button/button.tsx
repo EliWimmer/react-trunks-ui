@@ -9,7 +9,7 @@ import React, {
 import "./button.css";
 
 interface Props {
-	type?: "default" | "primary" | "danger" | "dashed" | "text";
+	type?: "default" | "primary" | "danger" | "dashed" | "textonly";
 	size?: "default" | "large" | "small";
 	disabled?: boolean;
 	children: ReactNode;

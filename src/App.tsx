@@ -23,7 +23,7 @@ export default function App() {
 	return (
 		<>
 			<div className="App">
-				<Row space wrap>
+				<Col>
 					<Presenter type="vertical">
 						<PresBody>
 							<Select
@@ -55,12 +55,13 @@ export default function App() {
 									{ label: <RiEdit2Fill />, key: "edit" },
 									{ label: <RiAddCircleFill />, key: "add" },
 								]}
-							></Card>
+							>
+								This is descriptive card text. I'm only here to show you stuff.
+							</Card>
 						</PresBody>
 						<PresDesc title="Card"></PresDesc>
 					</Presenter>
 
-					<Col>
 						<Presenter type="vertical">
 							<PresBody>
 								<Button>Default Button</Button>
@@ -68,7 +69,7 @@ export default function App() {
 								<Button type="danger">Danger Button</Button>
 								<Button type="dashed">Dashed Button</Button>
 								<Button disabled>Disabled Button</Button>
-								<Button type="text">Text Button</Button>
+								<Button type="textonly">Text Button</Button>
 							</PresBody>
 							<PresDesc title="Types"></PresDesc>
 						</Presenter>
@@ -81,13 +82,9 @@ export default function App() {
 							</PresBody>
 							<PresDesc title="Sizes"></PresDesc>
 						</Presenter>
-					</Col>
-
-
-				</Row>
+				</Col>
 
 				<div style={{ display: "none" }}>
-
 					<Tag color="red" type="solid">
 						Red
 					</Tag>
@@ -143,25 +140,30 @@ export default function App() {
 						Gray
 					</Tag>
 				</div>
-        <Text>Default text</Text>
-					<br />
+				
+				<Presenter type="vertical">
+							<PresBody>
+							<div style={{ display: "flex", flexDirection: "column", gap: "8px"}}>
+					<Text>Default text</Text>
 					<Text secondary>Secondary text</Text>
-					<br />
 					<Text success>Success text</Text>
-					<br />
 					<Text warning>Warning text</Text>
-					<br />
 					<Text danger>Danger text</Text>
-					<br />
 					<Text disabled>Disabled text</Text>
-					<br />
 					<Text highlight>Highlight text</Text>
-					<br />
 					<Text code>Code text</Text>
-					<br />
 					<Text keyboard>Keyboard text</Text>
-					<br />
-      </div>
+				</div>
+							</PresBody>
+							<PresDesc title="Text"></PresDesc>
+						</Presenter>
+				<div style={{ display: "flex", flexDirection: "column", gap: "8px"}}>
+
+					
+
+				</div>
+
+			</div>
 		</>
 	);
 }
