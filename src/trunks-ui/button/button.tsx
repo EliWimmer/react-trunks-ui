@@ -29,7 +29,7 @@ const Button: FC<Props> = ({ type, size, disabled, children, icon, fill }) => {
 
 	return (
 		<button
-			className={`trunks-button ${type} ${size} disabled-${disabled} ${clickUp} ${clickDown} icon fill-${fill}`}
+			className={`trunks-button ${type} ${size} ${disabled} ${clickUp} ${clickDown} icon fill-${fill}`}
 			onMouseDown={() => !disabled && setClickDown(true)}
 			onMouseUp={() => !disabled && setClickUp(true)}
 			onAnimationEnd={() => setClickUp(false)}

@@ -23,11 +23,16 @@ faded 200
     
 }
 .faded-red {
-    background-color: #EF9A9A;
-    color: #212121;
+    background-color: #FFCDD2;
+    border: 1px solid #E53935;
+    color: #B71C1C;
 }
 .border-red {
     border: 1px solid #E53935;
+    color: #212121;
+}
+.dashed-red {
+    border: 1px dashed #E53935;
     color: #212121;
 }
 
@@ -45,6 +50,10 @@ faded 200
     border: 1px solid #D81B60;
     color: #212121;
 }
+.dashed-pink {
+    border: 1px dashed #D81B60;
+    color: #212121;
+}
 
 .solid-purple {
     background-color: #8E24AA;
@@ -58,6 +67,10 @@ faded 200
 }
 .border-purple {
     border: 1px solid #8E24AA;
+    color: #212121;
+}
+.dashed-purple {
+    border: 1px dashed #8E24AA;
     color: #212121;
 }
 
@@ -75,6 +88,10 @@ faded 200
     border: 1px solid #5E35B1;
     color: #212121;
 }
+.dashed-deeppurple {
+    border: 1px dashed #5E35B1;
+    color: #212121;
+}
 
 .solid-indigo {
     background-color: #3949AB;
@@ -88,6 +105,10 @@ faded 200
 }
 .border-indigo {
     border: 1px solid #3949AB;
+    color: #212121;
+}
+.dashed-indigo {
+    border: 1px dashed #3949AB;
     color: #212121;
 }
 
@@ -105,6 +126,10 @@ faded 200
     border: 1px solid #1E88E5;
     color: #212121;
 }
+.dashed-blue {
+    border: 1px dashed #1E88E5;
+    color: #212121;
+}
 
 .solid-lightblue {
     background-color: #039BE5;
@@ -118,6 +143,10 @@ faded 200
 }
 .border-lightblue {
     border: 1px solid #039BE5;
+    color: #212121;
+}
+.dashed-lightblue {
+    border: 1px dashed #039BE5;
     color: #212121;
 }
 
@@ -135,6 +164,10 @@ faded 200
     border: 1px solid #00ACC1;
     color: #212121;
 }
+.dashed-cyan {
+    border: 1px dashed #00ACC1;
+    color: #212121;
+}
 
 .solid-teal {
     background-color: #00897B;
@@ -148,6 +181,10 @@ faded 200
 }
 .border-teal {
     border: 1px solid #00897B;
+    color: #212121;
+}
+.dashed-teal {
+    border: 1px dashed #00897B;
     color: #212121;
 }
 
@@ -165,6 +202,10 @@ faded 200
     border: 1px solid #43A047;
     color: #212121;
 }
+.dashed-green {
+    border: 1px dashed #43A047;
+    color: #212121;
+}
 
 .solid-lightgreen {
     background-color: #7CB342;
@@ -178,6 +219,10 @@ faded 200
 }
 .border-lightgreen {
     border: 1px solid #7CB342;
+    color: #212121;
+}
+.dashed-lightgreen {
+    border: 1px dashed #7CB342;
     color: #212121;
 }
 
@@ -195,6 +240,10 @@ faded 200
     border: 1px solid #C0CA33;
     color: #212121;
 }
+.dashed-lime {
+    border: 1px dashed #C0CA33;
+    color: #212121;
+}
 
 .solid-yellow {
     background-color: #FDD835;
@@ -208,6 +257,10 @@ faded 200
 }
 .border-yellow {
     border: 1px solid #FDD835;
+    color: #212121;
+}
+.dashed-yellow {
+    border: 1px dashed #FDD835;
     color: #212121;
 }
 
@@ -225,6 +278,10 @@ faded 200
     border: 1px solid #FFB300;
     color: #212121;
 }
+.dashed-amber {
+    border: 1px dashed #FFB300;
+    color: #212121;
+}
 
 .solid-orange {
     background-color: #FB8C00;
@@ -238,6 +295,10 @@ faded 200
 }
 .border-orange {
     border: 1px solid #FB8C00;
+    color: #212121;
+}
+.dashed-orange {
+    border: 1px dashed #FB8C00;
     color: #212121;
 }
 
@@ -255,6 +316,10 @@ faded 200
     border: 1px solid #F4511E;
     color: #212121;
 }
+.dashed-deeporange {
+    border: 1px dashed #F4511E;
+    color: #212121;
+}
 
 .solid-brown {
     background-color: #6D4C41;
@@ -270,6 +335,10 @@ faded 200
     border: 1px solid #6D4C41;
     color: #212121;
 }
+.dashed-brown {
+    border: 1px dashed #6D4C41;
+    color: #212121;
+}
 
 .solid-gray {
     background-color: #757575;
@@ -283,5 +352,27 @@ faded 200
 }
 .border-gray {
     border: 1px solid #757575;
+    color: #212121;
+}
+.dashed-gray {
+    border: 1px dashed #757575;
+    color: #212121;
+}
+.solid-white {
+    background-color: #F5F5F5;
+    color: #212121;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-white {
+    background-color: #FAFAFA;
+    color: #212121;
+}
+.border-white {
+    border: 1px solid #757575;
+    color: #212121;
+}
+.dashed-white {
+    border: 1px dashed #757575;
     color: #212121;
 }

@@ -2,8 +2,8 @@ import React, {FC, ReactNode} from "react";
 import './tag.css';
 
 interface Props {
-    color: "red" | "pink" | "purple" | "deeppurple" | "indigo" | "blue" | "lightblue" | "cyan" | "teal" | "green" | "lightgreen" | "lime" | "yellow" | "amber" | "orange" | "deeporange" | "brown" | "gray";
-    type: "solid" | "faded" | "border";
+    color: "red" | "pink" | "purple" | "deeppurple" | "indigo" | "blue" | "lightblue" | "cyan" | "teal" | "green" | "lightgreen" | "lime" | "yellow" | "amber" | "orange" | "deeporange" | "brown" | "gray" | "white";
+    type: "solid" | "faded" | "border" | "dashed";
     children: ReactNode;
 }
 

@@ -14,11 +14,12 @@ import {
 	Text,
 } from "./trunks-ui/trunks-ui";
 
+
+
 export default function App() {
 	function handleOnClick(buttonName: object) {
 		console.log(`Button ${buttonName} clicked!`);
 	}
-
 	//comment
 	return (
 		<>
@@ -71,7 +72,14 @@ export default function App() {
 								<Button disabled>Disabled Button</Button>
 								<Button type="textonly">Text Button</Button>
 							</PresBody>
-							<PresDesc title="Types"></PresDesc>
+							<PresDesc title="Types">Buttons come in 6 primary types:<br/>
+							<Tag color="white" type="border">Default</Tag>  
+							<Tag color="blue" type="solid">Primary</Tag>  
+							<Tag color="red" type="solid">Danger</Tag>  
+							<Tag color="gray" type="dashed">Dashed</Tag>  
+							<Tag color="gray" type="faded"><Text disabled>Disabled</Text></Tag>  
+							<Tag color="white" type="solid">Text</Tag> 
+							</PresDesc>
 						</Presenter>
 
 						<Presenter type="vertical">
@@ -84,11 +92,11 @@ export default function App() {
 						</Presenter>
 				</Col>
 
-				<div style={{ display: "none" }}>
-					<Tag color="red" type="solid">
+				<div style={{ display: "flex", flexWrap: "wrap" }}>
+					<Tag color="red" type="faded">
 						Red
 					</Tag>
-					<Tag color="pink" type="solid">
+					<Tag color="pink" type="faded">
 						Pink
 					</Tag>
 					<Tag color="purple" type="solid">
@@ -149,18 +157,17 @@ export default function App() {
 					<Text success>Success text</Text>
 					<Text warning>Warning text</Text>
 					<Text danger>Danger text</Text>
-					<Text disabled>Disabled text</Text>
+					<Text>Disabled text</Text>
 					<Text highlight>Highlight text</Text>
 					<Text code>Code text</Text>
-					<Text keyboard>Keyboard text</Text>
+					<div><Text keyboard>Ctrl</Text><Text keyboard>Alt</Text><Text keyboard>S</Text></div>
+					
 				</div>
 							</PresBody>
 							<PresDesc title="Text"></PresDesc>
 						</Presenter>
 				<div style={{ display: "flex", flexDirection: "column", gap: "8px"}}>
-
-					
-
+					<div style={{padding: "8px"}} />
 				</div>
 
 			</div>

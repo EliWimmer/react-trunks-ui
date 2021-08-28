@@ -25,9 +25,9 @@
 .presenter-title {
     display: flex;
     flex-direction: row;
-    font-size: 14px;
+    font-size: 18px;
     margin: 0px;
-    padding: 0px;
+    padding-bottom: 16px;
     font-weight: 600;
 }
 

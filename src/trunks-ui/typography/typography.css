@@ -8,33 +8,33 @@
     color: #212121;
 }
 
-.secondary-true {
-    color: #9E9E9E;
+.trunks-text.secondary {
+    color: #757575;
 }
 
-.success-true {
+.trunks-text.success {
     color: #4CAF50;
 }
 
-.warning-true {
-    color: #FDD835;
+.trunks-text.warning {
+    color: #FFB300;
 }
 
-.danger-true {
+.trunks-text.danger {
     color: #E53935;
 }
 
-.disabledtext-true {
+.trunks-text.disabled {
     color: #BDBDBD;
 }
 
-.highlight-true {
-    background-color: #FFF59D;
+.highlight {
+    background-color: #FFECB3;
     border-radius: 2px;
     width: fit-content;
 }
 
-.trunks-code {
+.trunks-text.code {
     font-family: 'Azeret Mono', monospace;
     background-color: #F5F5F5;
     border: 1px solid #E0E0E0;
@@ -45,12 +45,13 @@
     width: fit-content;
 }
 
-.keyboard-true {
+.trunks-text.keyboard {
     background-color: #F5F5F5;
     border-radius: 2px;
     font-size: 12px;;
     padding: 2px 3px;
     box-shadow: 0px 2px 0px 0px #E0E0E0;
     width: fit-content;
-    color: #424242;
+    color: #757575;
+    margin: 0px 2px;
 }

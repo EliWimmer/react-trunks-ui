@@ -28,43 +28,18 @@ interface LinkProps {
     children: ReactNode;
 }
 
-export const Text: FC<TextProps> = ({
-	secondary,
-	success,
-	warning,
-	danger,
-	disabled,
-	highlight,
-	code,
-	keyboard,
-	underline,
-	strike,
-	bold,
-	italic,
-    children,
-}) => {
+export const Text: FC<TextProps> = ({children, ...props}) => {
+
+	function returnKeys(obj: Record<string, boolean>) {
+		return Object.keys(obj).map(t => obj[t] ? t : null).filter(t => t !== null)
+	  }
+
 	return (
 		<>
-		{!code &&
 			<span
-			className={`trunks-text 
-            secondary-${secondary} 
-            success-${success} 
-            warning-${warning} 
-            danger-${danger} 
-            disabledtext-${disabled} 
-            highlight-${highlight}
-            keyboard-${keyboard} 
-            underline-${underline} 
-            strike-${strike} 
-            bold-${bold} 
-            italic-${italic}`}>
-			{children}
-		</span>
-		}
-		{code &&
-		<code className="trunks-code">{children}</code>
-		}
+			className={`trunks-text ${Object.keys(props)}`}>
+				{children}
+			</span>
 		</>
 	);
 };
