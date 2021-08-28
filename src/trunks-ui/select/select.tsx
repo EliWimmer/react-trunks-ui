@@ -13,22 +13,15 @@ interface Options {
   value: string;
   label: string;
   extra?: string;
-
 }
-const Select: FC<Props> = ({
-  placeholder,
-  options,
-  size,
-}) => {
-
+const Select: FC<Props> = ({ placeholder, options, size }) => {
   const [clicked, setClicked] = useState<boolean>(false);
   const [selected, setSelected] = useState<Options>({
     value: `${placeholder}`,
-    label: `${placeholder}`
+    label: `${placeholder}`,
   });
   const selectBox = createRef<HTMLDivElement>();
-  const selectedItem = createRef<HTMLLIElement>()
-  
+  const selectedItem = createRef<HTMLLIElement>();
 
   let debounceTimeout: NodeJS.Timeout;
   let searchTerm: string = "";
@@ -37,25 +30,25 @@ const Select: FC<Props> = ({
 
   function dynamicRef(label: string) {
     if (label === selected.label) {
-      return selectedItem
+      return selectedItem;
     }
   }
 
   useEffect(() => {
     onmousedown = (e) => {
-        clicked &&
+      clicked &&
         selectBox.current &&
         !selectBox.current.contains(e.target as Node) &&
         setClicked(false);
-      }
+    };
   }, [clicked, selectBox]);
 
   useEffect(() => {
-          selectedItem.current &&
-          selectedItem.current.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
-          });
+    selectedItem.current &&
+      selectedItem.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
   }, [selected, selectedItem]);
 
   return (
@@ -76,8 +69,7 @@ const Select: FC<Props> = ({
                 setClicked((oldState) => !oldState);
                 break;
               case "ArrowUp":
-                const prevOptionUp: number =
-                  options.indexOf(selected) - 1;
+                const prevOptionUp: number = options.indexOf(selected) - 1;
                 if (prevOptionUp > -1) {
                   setSelected(options[prevOptionUp]);
                 } else {
@@ -86,8 +78,7 @@ const Select: FC<Props> = ({
 
                 break;
               case "ArrowDown":
-                const prevOptionDown: number =
-                  options.indexOf(selected) + 1;
+                const prevOptionDown: number = options.indexOf(selected) + 1;
                 if (prevOptionDown === options.length) {
                   setSelected(options[0]);
                 } else {
@@ -115,7 +106,7 @@ const Select: FC<Props> = ({
                   searchTerm = "";
                 }, 500);
 
-                const searchedOption = options.find((option:any) => {
+                const searchedOption = options.find((option: any) => {
                   return option.label.toLowerCase().startsWith(searchTerm);
                 });
                 if (searchedOption) setSelected(searchedOption);
@@ -125,7 +116,11 @@ const Select: FC<Props> = ({
           clicked-={clicked.toString()}
         >
           {/* the contents of the select box */}
-          <span className={selected.label !== placeholder ? "is-selected" : "placeholder"}>
+          <span
+            className={
+              selected.label !== placeholder ? "is-selected" : "placeholder"
+            }
+          >
             {selected.label ? selected.label : placeholder}
           </span>
           <span className="dropdown-arrow">
@@ -138,7 +133,7 @@ const Select: FC<Props> = ({
           className={"select-list-box " + clicked}
           clicked-={clicked.toString()}
         >
-          {options.map((option:any) => (
+          {options.map((option: any) => (
             <li
               className={
                 "select-list-item " + (selected === option && "selected-item")
@@ -159,6 +154,6 @@ const Select: FC<Props> = ({
       </div>
     </>
   );
-}
+};
 
 export default Select;

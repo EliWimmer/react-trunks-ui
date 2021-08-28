@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.trunks-presenter {
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    flex-wrap: wrap;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 4%);
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.presenter-title {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.presenter-body-content {
+    padding: 16px;
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.presenter-body-content > * {
+
+    margin: 8px;
+}
+
+.presenter-description {
+    padding: 16px;
+}
+
+.space-true > * {
+    margin: 0px 16px 16px 0px
+}
+
+.grow-true > * {
+flex-grow: 1;
+}

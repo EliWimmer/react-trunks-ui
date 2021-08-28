@@ -26,13 +26,10 @@ const Card: FC<Props> = ({
   buttons,
   description,
 }) => {
-
   const [clicked, setClicked] = useState<boolean>(false);
   return (
     <div
-      className={
-        `card ${type} hover-${hover} clickable-${clickable} ${clicked}`
-      }
+      className={`card ${type} hover-${hover} clickable-${clickable} ${clicked}`}
       onClick={() => setClicked(true)}
       onAnimationEnd={() => setClicked(false)}
       clicked-={clicked.toString()}
@@ -46,17 +43,21 @@ const Card: FC<Props> = ({
       </div>
       <div className="card-content">{children}</div>
       <div className="card-description">{description}</div>
-      
-        {buttons &&
-          <div className="card-buttons-container">
-            {buttons.map((buttons:any) => (
-              <button onClick={buttons.click} key={buttons.key} className="card-buttons">{buttons.label}</button>
-            ))}
-          </div>
-        }
-      
 
+      {buttons && (
+        <div className="card-buttons-container">
+          {buttons.map((buttons: any) => (
+            <button
+              onClick={buttons.click}
+              key={buttons.key}
+              className="card-buttons"
+            >
+              {buttons.label}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
-}
+};
 export default Card;

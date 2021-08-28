@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+
+.text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #212121;
+}
+
+.secondary-true {
+    color: #9E9E9E;
+}
+
+.success-true {
+    color: #4CAF50;
+}
+
+.warning-true {
+    color: #FDD835;
+}
+
+.danger-true {
+    color: #E53935;
+}
+
+.disabled-true {
+    color: #BDBDBD;
+}
+
+.highlight-true {
+    background-color: #FFE082;
+    border-radius: 2px;
+}
+
+.code-true {
+    font-family: 'Anonymous', monospace;
+    background-color: #CFD8DC;
+    border-radius: 2px;
+    padding: 0px 2px;
+    color: #212121;
+    font-weight: 400;
+}
+
+.keyboard-true {
+    background-color: #EEEEEE;
+    border-radius: 2px;
+    padding: -1px 2px;
+    box-shadow: 0px 2px 0px 0px #BDBDBD;
+}

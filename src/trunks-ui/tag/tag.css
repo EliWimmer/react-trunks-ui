@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+/*
+solid & border 600
+faded 200
+*/
+
+.trunks-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    border-radius: 12px;
+    padding: 2px 6px 2px 6px;
+    font-weight: 400;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 12%);
+    margin: 0px 2px 0px 2px;
+    display: inline-block;
+}
+
+.solid-red {
+    background-color: #E53935;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-red {
+    background-color: #EF9A9A;
+    color: #212121;
+}
+.border-red {
+    border: 1px solid #E53935;
+    color: #212121;
+}
+
+.solid-pink {
+    background-color: #D81B60;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-pink {
+    background-color: #F48FB1;
+    color: #212121;
+}
+.border-pink {
+    border: 1px solid #D81B60;
+    color: #212121;
+}
+
+.solid-purple {
+    background-color: #8E24AA;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-purple {
+    background-color: #CE93D8;
+    color: #212121;
+}
+.border-purple {
+    border: 1px solid #8E24AA;
+    color: #212121;
+}
+
+.solid-deeppurple {
+    background-color: #5E35B1;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-deeppurple {
+    background-color: #B39DDB;
+    color: #212121;
+}
+.border-deeppurple {
+    border: 1px solid #5E35B1;
+    color: #212121;
+}
+
+.solid-indigo {
+    background-color: #3949AB;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-indigo {
+    background-color: #9FA8DA;
+    color: #212121;
+}
+.border-indigo {
+    border: 1px solid #3949AB;
+    color: #212121;
+}
+
+.solid-blue {
+    background-color: #1E88E5;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-blue {
+    background-color: #90CAF9;
+    color: #212121;
+}
+.border-blue {
+    border: 1px solid #1E88E5;
+    color: #212121;
+}
+
+.solid-lightblue {
+    background-color: #039BE5;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-lightblue {
+    background-color: #81D4FA;
+    color: #212121;
+}
+.border-lightblue {
+    border: 1px solid #039BE5;
+    color: #212121;
+}
+
+.solid-cyan {
+    background-color: #00ACC1;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-cyan {
+    background-color: #80DEEA;
+    color: #212121;
+}
+.border-cyan {
+    border: 1px solid #00ACC1;
+    color: #212121;
+}
+
+.solid-teal {
+    background-color: #00897B;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-teal {
+    background-color: #80CBC4;
+    color: #212121;
+}
+.border-teal {
+    border: 1px solid #00897B;
+    color: #212121;
+}
+
+.solid-green {
+    background-color: #43A047;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-green {
+    background-color: #A5D6A7;
+    color: #212121;
+}
+.border-green {
+    border: 1px solid #43A047;
+    color: #212121;
+}
+
+.solid-lightgreen {
+    background-color: #7CB342;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-lightgreen {
+    background-color: #C5E1A5;
+    color: #212121;
+}
+.border-lightgreen {
+    border: 1px solid #7CB342;
+    color: #212121;
+}
+
+.solid-lime {
+    background-color: #C0CA33;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-lime {
+    background-color: #E6EE9C;
+    color: #212121;
+}
+.border-lime {
+    border: 1px solid #C0CA33;
+    color: #212121;
+}
+
+.solid-yellow {
+    background-color: #FDD835;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-yellow {
+    background-color: #FFF59D;
+    color: #212121;
+}
+.border-yellow {
+    border: 1px solid #FDD835;
+    color: #212121;
+}
+
+.solid-amber {
+    background-color: #FFB300;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-amber {
+    background-color: #FFE082;
+    color: #212121;
+}
+.border-amber {
+    border: 1px solid #FFB300;
+    color: #212121;
+}
+
+.solid-orange {
+    background-color: #FB8C00;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-orange {
+    background-color: #FFCC80;
+    color: #212121;
+}
+.border-orange {
+    border: 1px solid #FB8C00;
+    color: #212121;
+}
+
+.solid-deeporange {
+    background-color: #F4511E;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-deeporange {
+    background-color: #FFAB91;
+    color: #212121;
+}
+.border-deeporange {
+    border: 1px solid #F4511E;
+    color: #212121;
+}
+
+.solid-brown {
+    background-color: #6D4C41;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-brown {
+    background-color: #BCAAA4;
+    color: #212121;
+}
+.border-brown {
+    border: 1px solid #6D4C41;
+    color: #212121;
+}
+
+.solid-gray {
+    background-color: #757575;
+    color: #FAFAFA;
+    text-shadow: 1px -1px rgba(0, 0, 0, 12%);
+    
+}
+.faded-gray {
+    background-color: #EEEEEE;
+    color: #212121;
+}
+.border-gray {
+    border: 1px solid #757575;
+    color: #212121;
+}

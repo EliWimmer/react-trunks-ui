@@ -187,3 +187,7 @@ padding-top: .6px;
 .button-label {
 
 }
+
+.fill-true {
+  width: 100%;
+}
