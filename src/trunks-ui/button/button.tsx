@@ -37,22 +37,59 @@ export const Button: FC<Props> = ({ type, size, mod, shape, children, iconLeft, 
 	const isIcon: string = icon ? "icon" : ""
 	return (
 		<>
-		<button
-			className={`trunks-button ${type} ${size} ${mod} ${isFill} ${isIcon} ${shape}`}
-			onMouseDown={() => setClickDown(true)}
-			onMouseUp={() => setClickUp(true)}
-			onAnimationEnd={() => setClickUp(false)}
-			clickup-={clickUp.toString()}
-			clickdown-={clickDown.toString()}
-			onClick={onClick}
-		>
-			{labelLeft && <div className="label-left">{labelLeft}</div>}
-			<span className="button-icon-left">{iconLeft}</span>
-			<span className="button-label">{children}</span>
-			<span className="button-icon">{icon}</span>
-			<span className="button-icon-right">{iconRight}</span>
-		</button>
-		{labelRight && <span className="label-right">{labelRight}</span>}
+
+			{labelLeft &&
+				<div className="button-container-left">
+					<div className={`label-left ${size}`}>{labelLeft}</div>
+					<button
+						className={`trunks-button ${type} ${size} ${mod} ${isFill} ${isIcon} ${shape}`}
+						onMouseDown={() => setClickDown(true)}
+						onMouseUp={() => setClickUp(true)}
+						onAnimationEnd={() => setClickUp(false)}
+						clickup-={clickUp.toString()}
+						clickdown-={clickDown.toString()}
+						onClick={onClick}>
+						<span className="button-icon-left">{iconLeft}</span>
+						<span className="button-label">{children}</span>
+						<span className="button-icon">{icon}</span>
+						<span className="button-icon-right">{iconRight}</span>
+					</button>
+				</div>
+			}
+			{labelRight &&
+				<div className="button-container-right">
+					<button
+						className={`trunks-button ${type} ${size} ${mod} ${isFill} ${isIcon} ${shape}`}
+						onMouseDown={() => setClickDown(true)}
+						onMouseUp={() => setClickUp(true)}
+						onAnimationEnd={() => setClickUp(false)}
+						clickup-={clickUp.toString()}
+						clickdown-={clickDown.toString()}
+						onClick={onClick}>
+						<span className="button-icon-left">{iconLeft}</span>
+						<span className="button-label">{children}</span>
+						<span className="button-icon">{icon}</span>
+						<span className="button-icon-right">{iconRight}</span>
+					</button>
+					<div className={`label-right ${size}`}>{labelRight}</div>
+				</div>
+			}
+			{!labelLeft && !labelRight &&
+				<button
+					className={`trunks-button ${type} ${size} ${mod} ${isFill} ${isIcon} ${shape}`}
+					onMouseDown={() => setClickDown(true)}
+					onMouseUp={() => setClickUp(true)}
+					onAnimationEnd={() => setClickUp(false)}
+					clickup-={clickUp.toString()}
+					clickdown-={clickDown.toString()}
+					onClick={onClick}>
+
+					<span className="button-icon-left">{iconLeft}</span>
+					<span className="button-label">{children}</span>
+					<span className="button-icon">{icon}</span>
+					<span className="button-icon-right">{iconRight}</span>
+				</button>
+			}
 		</>
 	);
 };
@@ -61,10 +98,12 @@ interface ButtonGroupProps {
 	children?: ReactNode;
 }
 
-export const ButtonGroup: FC<ButtonGroupProps> = ({children}) => {
-return (
-	<div className="button-group">
-		{children}
-	</div>
-)
+export const ButtonGroup: FC<ButtonGroupProps> = ({ children }) => {
+	return (
+		<div className="button-container">
+			<div className="button-group">
+				{children}
+			</div>
+		</div>
+	)
 }

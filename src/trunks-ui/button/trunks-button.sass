@@ -23,8 +23,6 @@
     100%
         box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
 
-
-
 // DEFAULT BUTTON
 .trunks-button
     font-family: trunksui.$font-inter
@@ -34,24 +32,25 @@
     height: 32px
     width: fit-content
     padding: 0px 12px
+    margin: 0px 12px
     background-color: trunksui.$white
     color: trunksui.$text-default
     border: trunksui.$border-default
     border-radius: trunksui.$border-radius
     box-shadow: trunksui.$shadow-default
     transition-duration: trunksui.$transistion-default
+    display: flex
+    flex-direction: row
+    align-items: center
     &:hover
         cursor: pointer
         color: trunksui.$blue-color
         border: trunksui.$border-blue
         box-shadow: trunksui.$shadow-hover-light
-
-
     &[clickDown-="true"]
         background-color: trunksui.$default-lightest
         box-shadow: trunksui.$shadow-inset
         transition-duration: trunksui.$transition-quick
-
     &[clickUp-="true"]
         animation: buttonClickPrimary
         animation-duration: trunksui.$transition-quick
@@ -281,7 +280,6 @@
 .trunks-button.icon svg
     margin: 2px 0px 0px 0px
 
- 
 .button-icon.large:not(:empty)
     padding-top: .6px
 
@@ -298,29 +296,75 @@
     position: relative
     display: inline-flex
     width: fit-content
+    .trunks-button:first-child
+        border-radius: 4px 0px 0px 4px
+        margin-right: -1px
+        z-index: 2
 .button-group > *
     box-shadow: none
 .button-group .trunks-button:not(:first-child):not(:last-child)
     border-radius: 0px
     margin-right: -1px
+    margin-left: 0px
     &:hover
         z-index: 2
-
-.label-left
-    border-right: 1px solid trunksui.$default-lighter
-    align-self: center
-    background-color: trunksui.$white
-    padding-right: 8px
-    margin-right: 8px
-    font-size: 12px
-    height: 100%
-    padding-top: auto
-    padding-bottom: auto
-        
-        
-.button-group .trunks-button:first-child
-    border-radius: 4px 0px 0px 4px
-    margin-right: -1px
-    z-index: 2
 .button-group .trunks-button:last-child
     border-radius: 0px 4px 4px 0px
+    margin-left: 0px
+
+.button-container-left
+    display: flex
+    flex-direction: row
+    align-items: center
+    font-family: trunksui.$font-inter
+    font-size: trunksui.$font-size-default
+    .label-left
+        display: flex
+        align-items: center
+        height: 32px
+        border: 1px solid trunksui.$default-lighter
+        box-sizing: border-box
+        padding: 0px 12px
+        border-radius: 4px 0px 0px 4px
+        border-right: 0px
+        background-color: trunksui.$default-lightest
+        transition-duration: trunksui.$transistion-default
+        margin-left: 12px
+        &.large
+            height: 48px
+            padding: 0px 14px
+            transition: 0.5s
+        &.small
+            height: 20px
+            padding: 0px 8px
+    .trunks-button
+        border-radius: 0px 4px 4px 0px
+        margin-left: 0px
+
+.button-container-right
+    display: flex
+    flex-direction: row
+    align-items: center
+    font-family: trunksui.$font-inter
+    font-size: trunksui.$font-size-default
+    .label-right
+        display: flex
+        align-items: center
+        height: 32px
+        border: 1px solid trunksui.$default-lighter
+        box-sizing: border-box
+        padding: 0px 12px
+        border-radius: 0px 4px 4px 0px
+        border-left: 0px
+        background-color: trunksui.$default-lightest
+        transition-duration: trunksui.$transistion-default
+        margin-right: 12px
+        &.large
+            height: 48px
+            padding: 0px 14px
+        &.small
+            height: 20px
+            padding: 0px 8px
+    .trunks-button
+        border-radius: 4px 0px 0px 4px
+        margin-right: 0px
