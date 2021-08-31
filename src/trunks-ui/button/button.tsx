@@ -2,22 +2,28 @@ import React, {
 	useState,
 	FC,
 	useEffect,
-	Component,
 	ReactElement,
 	ReactNode,
+	ReactEventHandler,
 } from "react";
-import "./button.css";
+import "./trunks-button.sass";
 
 interface Props {
-	type?: "default" | "primary" | "danger" | "dashed" | "textonly";
+	type?: "default" | "primary" | "dashed" | "textonly" | "link";
 	size?: "default" | "large" | "small";
-	disabled?: boolean;
-	children: ReactNode;
+	mod?: "disabled" | "warn" | "danger";
+	shape?: "round" | "square" | "squircle";
+	children?: ReactNode;
+	iconLeft?: ReactElement;
+	iconRight?: ReactElement;
 	icon?: ReactElement;
 	fill?: boolean;
+	labelLeft?: string;
+	labelRight?: string;
+	onClick?: () => void;
 }
 
-const Button: FC<Props> = ({ type, size, disabled, children, icon, fill }) => {
+export const Button: FC<Props> = ({ type, size, mod, shape, children, iconLeft, iconRight, icon, fill, onClick, labelLeft, labelRight }) => {
 	const [clickUp, setClickUp] = useState<boolean>(false);
 	const [clickDown, setClickDown] = useState<boolean>(false);
 
@@ -27,19 +33,38 @@ const Button: FC<Props> = ({ type, size, disabled, children, icon, fill }) => {
 		};
 	}, [clickUp, clickDown]);
 
+	const isFill: string = fill ? "fill" : ""
+	const isIcon: string = icon ? "icon" : ""
 	return (
+		<>
 		<button
-			className={`trunks-button ${type} ${size} ${disabled} ${clickUp} ${clickDown} icon fill-${fill}`}
-			onMouseDown={() => !disabled && setClickDown(true)}
-			onMouseUp={() => !disabled && setClickUp(true)}
+			className={`trunks-button ${type} ${size} ${mod} ${isFill} ${isIcon} ${shape}`}
+			onMouseDown={() => setClickDown(true)}
+			onMouseUp={() => setClickUp(true)}
 			onAnimationEnd={() => setClickUp(false)}
-			clickUp-={clickUp.toString()}
-			clickDown-={clickDown.toString()}
+			clickup-={clickUp.toString()}
+			clickdown-={clickDown.toString()}
+			onClick={onClick}
 		>
-			<span className="button-icon">{icon}</span>
+			{labelLeft && <div className="label-left">{labelLeft}</div>}
+			<span className="button-icon-left">{iconLeft}</span>
 			<span className="button-label">{children}</span>
+			<span className="button-icon">{icon}</span>
+			<span className="button-icon-right">{iconRight}</span>
 		</button>
+		{labelRight && <span className="label-right">{labelRight}</span>}
+		</>
 	);
 };
 
-export default Button;
+interface ButtonGroupProps {
+	children?: ReactNode;
+}
+
+export const ButtonGroup: FC<ButtonGroupProps> = ({children}) => {
+return (
+	<div className="button-group">
+		{children}
+	</div>
+)
+}

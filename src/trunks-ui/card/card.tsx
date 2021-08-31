@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, FC } from "react";
+import React, { ReactNode, useState, FC, MouseEvent } from "react";
 import "./card.css";
 
 interface Props {
@@ -10,11 +10,14 @@ interface Props {
   children?: ReactNode;
   size?: string;
   title?: string;
-  buttons?: any;
+  buttons?: ReactNode[];
   description?: string;
+  id: string;
 }
 
-const Card: FC<Props> = ({
+
+
+export const Card: FC<Props> = ({
   type,
   hover,
   clickable,
@@ -25,8 +28,13 @@ const Card: FC<Props> = ({
   title,
   buttons,
   description,
+  id,
+  ...element
 }) => {
   const [clicked, setClicked] = useState<boolean>(false);
+
+
+
   return (
     <div
       className={`card ${type} hover-${hover} clickable-${clickable} ${clicked}`}
@@ -44,20 +52,23 @@ const Card: FC<Props> = ({
       <div className="card-content">{children}</div>
       <div className="card-description">{description}</div>
 
-      {buttons && (
-        <div className="card-buttons-container">
-          {buttons.map((buttons: any) => (
-            <button
-              onClick={buttons.click}
-              key={buttons.key}
-              className="card-buttons"
-            >
-              {buttons.label}
-            </button>
-          ))}
-        </div>
-      )}
+    
     </div>
   );
 };
-export default Card;
+
+interface PlsLord {
+  children: ReactNode;
+  onPress: Function
+}
+
+export const CardButton:  FC<PlsLord> = (children:ReactNode, onPress:Function) => {
+
+  return (
+    <>
+    <button onClick={() => onPress}>
+      {children}
+      </button>
+      </>
+  )
+}

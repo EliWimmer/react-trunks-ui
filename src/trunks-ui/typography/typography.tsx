@@ -30,10 +30,6 @@ interface LinkProps {
 
 export const Text: FC<TextProps> = ({children, ...props}) => {
 
-	function returnKeys(obj: Record<string, boolean>) {
-		return Object.keys(obj).map(t => obj[t] ? t : null).filter(t => t !== null)
-	  }
-
 	return (
 		<>
 			<span

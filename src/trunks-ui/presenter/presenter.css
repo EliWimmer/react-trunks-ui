@@ -34,9 +34,11 @@
 .presenter-body-content {
     padding: 16px;
     display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #e0e0e0;
+    flex-direction: row;
+    border-right: 1px solid #e0e0e0;
     flex-wrap: wrap;
+    background-color: #FAFAFA;
+    border-radius: 4px 0px 0px 4px;
 }
 
 .presenter-body-content > * {
@@ -45,6 +47,7 @@
 
 .presenter-description {
     padding: 16px;
+    font-size: 14px;
 }
 
 .space-true > * {

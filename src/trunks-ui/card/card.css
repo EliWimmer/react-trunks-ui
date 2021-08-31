@@ -16,7 +16,7 @@
 
 .card {
   height: fit-content;
-  width: 300px;
+  width: fit-content;
   background: white;
   border-radius: 4px;
   box-sizing: border-box;

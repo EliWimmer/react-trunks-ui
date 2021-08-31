@@ -1,0 +1,7 @@
+{
+    "color-highlight.markerType": "foreground",
+    "color-highlight.sass.includePaths": [
+    "./react-trunks-ui"
+    ],
+    "explorer.compactFolders": false
+}

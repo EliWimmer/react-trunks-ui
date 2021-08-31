@@ -2,9 +2,19 @@
     display: flex;
     flex-direction: row;
 }
+
+.flex-row > * {
+    margin: 0px 8px;
+}
 .flex-col {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.flex-col > * {
+    margin: 8px 0px;
 }
 
 .wrap-true {

@@ -1,0 +1,326 @@
+@use '../trunksui'
+
+// ANIMATIONS
+@keyframes buttonClickPrimary
+    0%
+        box-shadow: 0px 0px 0px 0px rgba(30, 136, 229, 50%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
+    50%
+        box-shadow: 0px 0px 0px 2px rgba(30, 136, 229, 20%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
+    100%
+        box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
+@keyframes buttonClickDanger
+    0%
+        box-shadow: 0px 0px 0px 0px rgba(229, 57, 53, 50%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
+    50%
+        box-shadow: 0px 0px 0px 2px rgba(229, 57, 53, 20%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
+    100%
+        box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
+@keyframes buttonClickWarn
+    0%
+        box-shadow: 0px 0px 0px 0px rgba(251, 140, 0, 50%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
+    50%
+        box-shadow: 0px 0px 0px 2px rgba(251, 140, 0, 20%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
+    100%
+        box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0%), 0px 4px 4px 0px rgba(0, 0, 0, 4%)
+
+
+
+// DEFAULT BUTTON
+.trunks-button
+    font-family: trunksui.$font-inter
+    font-size: trunksui.$font-size-default
+    font-weight: 500
+    box-sizing: border-box
+    height: 32px
+    width: fit-content
+    padding: 0px 12px
+    background-color: trunksui.$white
+    color: trunksui.$text-default
+    border: trunksui.$border-default
+    border-radius: trunksui.$border-radius
+    box-shadow: trunksui.$shadow-default
+    transition-duration: trunksui.$transistion-default
+    &:hover
+        cursor: pointer
+        color: trunksui.$blue-color
+        border: trunksui.$border-blue
+        box-shadow: trunksui.$shadow-hover-light
+
+
+    &[clickDown-="true"]
+        background-color: trunksui.$default-lightest
+        box-shadow: trunksui.$shadow-inset
+        transition-duration: trunksui.$transition-quick
+
+    &[clickUp-="true"]
+        animation: buttonClickPrimary
+        animation-duration: trunksui.$transition-quick
+        animation-iteration-count: 1
+.trunks-button.primary
+    text-shadow: trunksui.$text-shadows
+    background-color: trunksui.$blue-color
+    color: trunksui.$default-lightest
+    border: trunksui.$border-blue-dark
+
+    &:hover
+        background-color: trunksui.$blue-light
+        color: trunksui.$white
+        border: trunksui.$border-blue-light
+    &[clickDown-="true"]
+        background-color: trunksui.$blue-dark
+.trunks-button.dashed
+    border: trunksui.$border-default-dashed
+
+    &:hover
+        border: trunksui.$border-dashed-blue-hover
+.trunks-button.textonly
+    border: none
+    box-shadow: none
+    background: none
+
+    &:hover
+        background-color: trunksui.$default-ultralight
+
+    &[clickDown-="true"]
+        background-color: trunksui.$default-lighter
+.trunks-button.link
+    border: none
+    background: none
+    color: trunksui.$blue-color
+    box-shadow: none
+
+    &:hover
+        color: trunksui.$blue-light
+        background-color: none
+
+    &[clickDown-="true"]
+
+        background: none
+        color: trunksui.$blue-dark
+        box-shadow: none
+    &[clickUp-="true"]
+        animation: none
+
+// DANGER BUTTON
+.trunks-button.danger
+    border: trunksui.$border-red
+    color: trunksui.$red-color
+
+    &:hover
+        color: trunksui.$red-light
+        border: trunksui.$border-red-light
+
+    &[clickDown-="true"]
+        color: trunksui.$red-dark
+        border: trunksui.$border-red-dark
+    &[clickUp-="true"]
+        animation: buttonClickDanger
+        animation-duration: trunksui.$transition-quick
+        animation-iteration-count: 1
+.trunks-button.primary.danger
+    background-color: trunksui.$red-color
+    color: trunksui.$default-lightest
+    border: trunksui.$border-red-dark
+    &:hover
+        background-color: trunksui.$red-light
+        border: trunksui.$border-red
+    &[clickDown-="true"]
+        background-color: trunksui.$red-dark
+        border: trunksui.$border-red-light
+.trunks-button.dashed.danger
+    border: trunksui.$border-dashed-red
+
+    &:hover
+        border: trunksui.$border-dashed-red-hover
+.trunks-button.textonly.danger
+    border: none
+    box-shadow: none
+
+    &:hover
+        background-color: trunksui.$red-lightest
+
+    &[clickDown-="true"]
+        background-color: trunksui.$red-ultralight
+.trunks-button.link.danger
+    border: none
+    background-color: none
+    color: trunksui.$red-color
+    box-shadow: none
+
+    &:hover
+        color: trunksui.$red-lighter
+        background-color: none
+
+    &[clickDown-="true"]
+        background: none
+        color: trunksui.$red-dark
+        box-shadow: none
+    &[clickUp-="true"]
+        animation: none
+
+// WARN BUTTON
+.trunks-button.warn
+    border: trunksui.$border-amber
+    color: trunksui.$amber-color
+
+    &:hover
+        color: trunksui.$amber-light
+        border: trunksui.$border-amber-light
+
+    &[clickDown-="true"]
+        color: trunksui.$amber-dark
+        border: trunksui.$border-amber-dark
+    &[clickUp-="true"]
+        animation: buttonClickWarn
+        animation-duration: trunksui.$transition-quick
+        animation-iteration-count: 1
+.trunks-button.primary.warn
+    background-color: trunksui.$amber-color
+    color: trunksui.$default-lightest
+    border: trunksui.$border-amber-dark
+    &:hover
+        background-color: trunksui.$amber-light
+        border: trunksui.$border-amber
+    &[clickDown-="true"]
+        background-color: trunksui.$amber-dark
+        border: trunksui.$border-amber-light
+.trunks-button.dashed.warn
+    border: trunksui.$border-dashed-amber
+
+    &:hover
+        border: trunksui.$border-dashed-amber-hover
+.trunks-button.textonly.warn
+    border: none
+    box-shadow: none
+
+    &:hover
+        background-color: trunksui.$amber-lightest
+
+    &[clickDown-="true"]
+        background-color: trunksui.$amber-ultralight
+.trunks-button.link.warn
+    border: none
+    background-color: none
+    color: trunksui.$amber-color
+    box-shadow: none
+
+    &:hover
+        color: trunksui.$amber-lighter
+        background-color: none
+
+    &[clickDown-="true"]
+        background: none
+        color: trunksui.$amber-dark
+        box-shadow: none
+    &[clickUp-="true"]
+        animation: none
+
+// DISABLED BUTTON
+.trunks-button.disabled
+    color: trunksui.$default-light
+    &:hover
+        border: trunksui.$border-default
+        cursor: not-allowed
+    &[clickDown-="true"]
+        box-shadow: trunksui.$shadow-default
+        background-color: trunksui.$white
+    &[clickUp-="true"]
+        animation: none
+.trunks-button.primary.disabled
+    background-color: trunksui.$default-ultralight
+    border: trunksui.$border-default
+    text-shadow: none
+    color: trunksui.$default-light
+.trunks-button.dashed.disabled
+    &:hover
+        border: trunksui.$border-default-dashed
+.trunks-button.textonly.disabled
+    &:hover
+        border: none
+        background: none
+    &[clickDown-="true"]
+        box-shadow: none
+.trunks-button.link.disabled
+    &:hover
+        border: none
+        background: none
+        color: trunksui.$default-light
+    &[clickDown-="true"]
+        box-shadow: none
+
+// SIZE
+.trunks-button.small
+    height: 20px
+    padding: 0px 8px
+.trunks-button.large
+    height: 48px
+    padding: 0px 24px
+    font-size: trunksui.$font-size-h3
+
+/// ICON
+.button-icon-left:not(:empty) svg
+    margin-right: 6px
+    vertical-align: middle
+    margin-bottom: 1px
+.button-icon-right:not(:empty) svg
+    margin-left: 8px
+    vertical-align: middle
+    margin-bottom: 1px
+.trunks-button.icon
+    height: 32px
+    width: 32px
+    padding: 0px 0px 0px 0px
+.trunks-button.icon.small
+    height: 20px
+    width: 20px
+    padding: 0px 0px 0px 0px
+.trunks-button.icon.large
+    height: 48px
+    width: 48px
+    padding: 0px 0px 0px 0px
+.trunks-button.icon svg
+    margin: 2px 0px 0px 0px
+
+ 
+.button-icon.large:not(:empty)
+    padding-top: .6px
+
+/// SHAPE
+.trunks-button.round
+    border-radius: 10rem
+.trunks-button.square
+    border-radius: 0px
+.trunks-button.squircle
+    border-radius: 12px
+
+.button-group
+    box-shadow: trunksui.$shadow-default
+    position: relative
+    display: inline-flex
+    width: fit-content
+.button-group > *
+    box-shadow: none
+.button-group .trunks-button:not(:first-child):not(:last-child)
+    border-radius: 0px
+    margin-right: -1px
+    &:hover
+        z-index: 2
+
+.label-left
+    border-right: 1px solid trunksui.$default-lighter
+    align-self: center
+    background-color: trunksui.$white
+    padding-right: 8px
+    margin-right: 8px
+    font-size: 12px
+    height: 100%
+    padding-top: auto
+    padding-bottom: auto
+        
+        
+.button-group .trunks-button:first-child
+    border-radius: 4px 0px 0px 4px
+    margin-right: -1px
+    z-index: 2
+.button-group .trunks-button:last-child
+    border-radius: 0px 4px 4px 0px
