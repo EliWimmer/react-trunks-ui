@@ -1,10 +1,5 @@
 @import '../../../trunks-ui/trunksui'
 
-.components-body
-    width: 100%
-    display: flex
-    flex-direction: row
-
 .side-menu
     width: 15rem
     border-right: $border-default
@@ -13,6 +8,7 @@
     font-weight: 400
     display: flex
     flex-direction: column
+    height: 100%
     .menu-item
         color: $default-darkest
         padding: 12px 0px 12px 24px
@@ -31,5 +27,15 @@
 .display-area
     width: 100%
 
-.code-area
+.compo-page
+    padding: 24px 48px
     height: 100%
+    display: flex
+    flex-direction: column
+    box-sizing: border-box
+    flex-grow: 1
+.compo-page-container
+    height: 100%
+    width: 100%
+    display: flex
+    flex-direction: row

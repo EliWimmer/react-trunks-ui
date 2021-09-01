@@ -1,5 +1,5 @@
-import React, { ReactNode, useState, FC, MouseEvent } from "react";
-import "./card.css";
+import React, { ReactNode, useState, FC, MouseEvent } from 'react';
+import './card.sass';
 
 interface Props {
   type?: string;
@@ -10,12 +10,10 @@ interface Props {
   children?: ReactNode;
   size?: string;
   title?: string;
-  buttons?: ReactNode[];
+  buttons?: ReactNode;
   description?: string;
-  id: string;
+  id?: string;
 }
-
-
 
 export const Card: FC<Props> = ({
   type,
@@ -33,42 +31,37 @@ export const Card: FC<Props> = ({
 }) => {
   const [clicked, setClicked] = useState<boolean>(false);
 
-
-
   return (
     <div
       className={`card ${type} hover-${hover} clickable-${clickable} ${clicked}`}
       onClick={() => setClicked(true)}
       onAnimationEnd={() => setClicked(false)}
-      clicked-={clicked.toString()}
-    >
-      <div className={cover ? "card-cover" : "no-card"}>
-        <img alt="cover" src={cover} />
+      clicked-={clicked.toString()}>
+      <div className={cover ? 'card-cover' : 'no-card'}>
+        <img alt='cover' src={cover} />
       </div>
-      <div className="card-header">
-        {title}
-        <div className="extra">{extra}</div>
-      </div>
-      <div className="card-content">{children}</div>
-      <div className="card-description">{description}</div>
-
-    
+      {title && (
+        <div className='card-header'>
+          {title}
+          <div className='extra'>{extra}</div>
+        </div>
+      )}
+      <div className='card-content'>{children}</div>
+      <div className='card-description'>{description}</div>
+      <div className='card-buttons'>{buttons}</div>
     </div>
   );
 };
 
 interface PlsLord {
-  children: ReactNode;
-  onPress: Function
+  children?: string;
+  onClick?: () => void;
 }
 
-export const CardButton:  FC<PlsLord> = (children:ReactNode, onPress:Function) => {
-
+export const CardButton: FC<PlsLord> = (children, onClick) => {
   return (
     <>
-    <button onClick={() => onPress}>
-      {children}
-      </button>
-      </>
-  )
-}
+      <button>{children}</button>
+    </>
+  );
+};

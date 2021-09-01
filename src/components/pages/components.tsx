@@ -7,12 +7,13 @@ import {
   useRouteMatch,
   NavLink,
 } from 'react-router-dom';
-import Buttons from './components/buttons';
 import { Text } from '../../trunks-ui/trunks-ui';
+import ButtonsPage from './components/buttons-page';
+import CardsPage from './components/cards-page';
 export default function ComponentsPage() {
   let match = useRouteMatch();
   return (
-    <div className='components-body'>
+    <>
       <nav className='side-menu'>
         <NavLink
           className='menu-item'
@@ -30,7 +31,7 @@ export default function ComponentsPage() {
         <NavLink
           className='menu-item'
           activeClassName='menu-item-selected'
-          to={`${match.url}/card`}>
+          to={`${match.url}/cards`}>
           Card
         </NavLink>
         <NavLink
@@ -133,10 +134,13 @@ export default function ComponentsPage() {
       <div className='display-area'>
         <Switch>
           <Route path={`${match.path}/buttons`}>
-            <Buttons />
+            <ButtonsPage />
+          </Route>
+          <Route path={`${match.path}/cards`}>
+            <CardsPage />
           </Route>
         </Switch>
       </div>
-    </div>
+    </>
   );
 }
