@@ -1,0 +1,22 @@
+@use '../trunksui'
+
+.trunks-space:not(.inline)
+    display: flex
+    align-content: center
+    align-items: center
+    &.default > *
+        margin: .5rem
+    &.small > *
+        margin: .25rem
+    &.large > *
+        margin: 1rem
+    &.wrap
+        flex-wrap: wrap
+
+.trunks-space.inline
+    &.default
+        margin: .5rem
+    &.small
+        margin: .25rem
+    &.large
+        margin: 1rem

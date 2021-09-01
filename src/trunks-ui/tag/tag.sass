@@ -1,0 +1,250 @@
+@use '../trunksui'
+
+.trunks-tag
+    font-size: trunksui.$font-size-small
+    padding: 0rem .2rem 0rem .2rem
+    border-radius: 4px
+    width: fit-content
+    font-weight: trunksui.$font-semi-bold
+    box-shadow: trunksui.$shadow-default
+    transition-duration: 0.5s
+    &:hover
+        box-shadow: trunksui.$shadow-hover-light
+
+    &.default
+        background-color: trunksui.$default-ultralight
+        border: 1px solid trunksui.$default-lighter
+        color: trunksui.$default-darkest
+        &.red
+            background-color: trunksui.$red-lightest
+            border: 1px solid trunksui.$red-color
+            color: trunksui.$red-color
+        &.pink
+            background-color: trunksui.$pink-lightest
+            border: 1px solid trunksui.$pink-color
+            color: trunksui.$pink-color
+        &.purple
+            background-color: trunksui.$purple-lightest
+            border: 1px solid trunksui.$purple-color
+            color: trunksui.$purple-color
+        &.deeppurple
+            background-color: trunksui.$deeppurple-lightest
+            border: 1px solid trunksui.$deeppurple-color
+            color: trunksui.$deeppurple-color
+        &.indigo
+            background-color: trunksui.$indigo-lightest
+            border: 1px solid trunksui.$indigo-color
+            color: trunksui.$indigo-color
+        &.blue
+            background-color: trunksui.$blue-lightest
+            border: 1px solid trunksui.$blue-color
+            color: trunksui.$blue-color
+        &.lightblue
+            background-color: trunksui.$lightblue-lightest
+            border: 1px solid trunksui.$lightblue-color
+            color: trunksui.$lightblue-color
+        &.cyan
+            background-color: trunksui.$cyan-lightest
+            border: 1px solid trunksui.$cyan-color
+            color: trunksui.$cyan-color
+        &.teal
+            background-color: trunksui.$teal-lightest
+            border: 1px solid trunksui.$teal-color
+            color: trunksui.$teal-color
+        &.green
+            background-color: trunksui.$green-lightest
+            border: 1px solid trunksui.$green-color
+            color: trunksui.$green-color
+        &.lightgreen
+            background-color: trunksui.$lightgreen-lightest
+            border: 1px solid trunksui.$lightgreen-color
+            color: trunksui.$lightgreen-color
+        &.lime
+            background-color: trunksui.$lime-lightest
+            border: 1px solid trunksui.$lime-color
+            color: trunksui.$lime-color
+        &.yellow
+            background-color: trunksui.$yellow-lightest
+            border: 1px solid trunksui.$yellow-color
+            color: trunksui.$yellow-color
+        &.amber
+            background-color: trunksui.$amber-lightest
+            border: 1px solid trunksui.$amber-color
+            color: trunksui.$amber-color
+        &.orange
+            background-color: trunksui.$orange-lightest
+            border: 1px solid trunksui.$orange-color
+            color: trunksui.$orange-color
+        &.deeporange
+            background-color: trunksui.$deeporange-lightest
+            border: 1px solid trunksui.$deeporange-color
+            color: trunksui.$deeporange-color
+        &.brown
+            background-color: trunksui.$brown-lightest
+            border: 1px solid trunksui.$brown-color
+            color: trunksui.$brown-color
+    &.solid
+        background-color: trunksui.$default-color
+        border: 1px solid trunksui.$default-color
+        color: trunksui.$default-lightest
+        &.red
+            background-color: trunksui.$red-color
+            border: 1px solid trunksui.$red-color
+        &.pink
+            background-color: trunksui.$pink-color
+            border: 1px solid trunksui.$pink-color
+        &.purple
+            background-color: trunksui.$purple-color
+            border: 1px solid trunksui.$purple-color
+        &.deeppurple
+            background-color: trunksui.$deeppurple-color
+            border: 1px solid trunksui.$deeppurple-color
+        &.indigo
+            background-color: trunksui.$indigo-color
+            border: 1px solid trunksui.$indigo-color
+        &.blue
+            background-color: trunksui.$blue-color
+            border: 1px solid trunksui.$blue-color
+        &.lightblue
+            background-color: trunksui.$lightblue-color
+            border: 1px solid trunksui.$lightblue-color
+        &.cyan
+            background-color: trunksui.$cyan-color
+            border: 1px solid trunksui.$cyan-color
+        &.teal
+            background-color: trunksui.$teal-color
+            border: 1px solid trunksui.$teal-color
+        &.green
+            background-color: trunksui.$green-color
+            border: 1px solid trunksui.$green-color
+        &.lightgreen
+            background-color: trunksui.$lightgreen-color
+            border: 1px solid trunksui.$lightgreen-color
+        &.lime
+            background-color: trunksui.$lime-color
+            border: 1px solid trunksui.$lime-color
+        &.yellow
+            background-color: trunksui.$yellow-color
+            border: 1px solid trunksui.$yellow-color
+        &.amber
+            background-color: trunksui.$amber-color
+            border: 1px solid trunksui.$amber-color
+        &.orange
+            background-color: trunksui.$orange-color
+            border: 1px solid trunksui.$orange-color
+        &.deeporange
+            background-color: trunksui.$deeporange-color
+            border: 1px solid trunksui.$deeporange-color
+        &.brown
+            background-color: trunksui.$brown-color
+            border: 1px solid trunksui.$brown-color
+    &.dashed
+        background-color: trunksui.$white
+        border: 1px dashed trunksui.$default-color
+        color: trunksui.$default-darkest
+        &.red
+            border: 1px dashed trunksui.$red-color
+            color: trunksui.$red-color
+        &.pink
+            border: 1px dashed trunksui.$pink-color
+            color: trunksui.$pink-color
+        &.purple
+            border: 1px dashed trunksui.$purple-color
+            color: trunksui.$purple-color
+        &.deeppurple
+            border: 1px dashed trunksui.$deeppurple-color
+            color: trunksui.$deeppurple-color
+        &.indigo
+            border: 1px dashed trunksui.$indigo-color
+            color: trunksui.$indigo-color
+        &.blue
+            border: 1px dashed trunksui.$blue-color
+            color: trunksui.$blue-color
+        &.lightblue
+            border: 1px dashed trunksui.$lightblue-color
+            color: trunksui.$lightblue-color
+        &.cyan
+            border: 1px dashed trunksui.$cyan-color
+            color: trunksui.$cyan-color
+        &.teal
+            border: 1px dashed trunksui.$teal-color
+            color: trunksui.$teal-color
+        &.green
+            border: 1px dashed trunksui.$green-color
+            color: trunksui.$green-color
+        &.lightgreen
+            border: 1px dashed trunksui.$lightgreen-color
+            color: trunksui.$lightgreen-color
+        &.lime
+            border: 1px dashed trunksui.$lime-color
+            color: trunksui.$lime-color
+        &.yellow
+            border: 1px dashed trunksui.$yellow-color
+            color: trunksui.$yellow-color
+        &.amber
+            border: 1px dashed trunksui.$amber-color
+            color: trunksui.$amber-color
+        &.orange
+            border: 1px dashed trunksui.$orange-color
+            color: trunksui.$orange-color
+        &.deeporange
+            border: 1px dashed trunksui.$deeporange-color
+            color: trunksui.$deeporange-color
+        &.brown
+            border: 1px dashed trunksui.$brown-color
+            color: trunksui.$brown-color
+    &.border
+        background-color: trunksui.$white
+        border: 1px solid trunksui.$default-color
+        color: trunksui.$default-darkest
+        &.red
+            border: 1px solid trunksui.$red-color
+            color: trunksui.$red-color
+        &.pink
+            border: 1px solid trunksui.$pink-color
+            color: trunksui.$pink-color
+        &.purple
+            border: 1px solid trunksui.$purple-color
+            color: trunksui.$purple-color
+        &.deeppurple
+            border: 1px solid trunksui.$deeppurple-color
+            color: trunksui.$deeppurple-color
+        &.indigo
+            border: 1px solid trunksui.$indigo-color
+            color: trunksui.$indigo-color
+        &.blue
+            border: 1px solid trunksui.$blue-color
+            color: trunksui.$blue-color
+        &.lightblue
+            border: 1px solid trunksui.$lightblue-color
+            color: trunksui.$lightblue-color
+        &.cyan
+            border: 1px solid trunksui.$cyan-color
+            color: trunksui.$cyan-color
+        &.teal
+            border: 1px solid trunksui.$teal-color
+            color: trunksui.$teal-color
+        &.green
+            border: 1px solid trunksui.$green-color
+            color: trunksui.$green-color
+        &.lightgreen
+            border: 1px solid trunksui.$lightgreen-color
+            color: trunksui.$lightgreen-color
+        &.lime
+            border: 1px solid trunksui.$lime-color
+            color: trunksui.$lime-color
+        &.yellow
+            border: 1px solid trunksui.$yellow-color
+            color: trunksui.$yellow-color
+        &.amber
+            border: 1px solid trunksui.$amber-color
+            color: trunksui.$amber-color
+        &.orange
+            border: 1px solid trunksui.$orange-color
+            color: trunksui.$orange-color
+        &.deeporange
+            border: 1px solid trunksui.$deeporange-color
+            color: trunksui.$deeporange-color
+        &.brown
+            border: 1px solid trunksui.$brown-color
+            color: trunksui.$brown-color

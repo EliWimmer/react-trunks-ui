@@ -10,6 +10,7 @@ import {
 import { Text } from '../../trunks-ui/trunks-ui';
 import ButtonsPage from './components/buttons-page';
 import CardsPage from './components/cards-page';
+import TagsPage from './components/tags-page';
 export default function ComponentsPage() {
   let match = useRouteMatch();
   return (
@@ -138,6 +139,9 @@ export default function ComponentsPage() {
           </Route>
           <Route path={`${match.path}/cards`}>
             <CardsPage />
+          </Route>
+          <Route path={`${match.path}/tags`}>
+            <TagsPage />
           </Route>
         </Switch>
       </div>

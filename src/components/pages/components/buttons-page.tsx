@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonGroup, Text } from '../../../trunks-ui/trunks-ui';
+import { Button, ButtonGroup, Text, Space } from '../../../trunks-ui/trunks-ui';
 import {
   RiSendPlane2Fill,
   RiArrowRightSLine,
@@ -46,11 +46,13 @@ const ButtonTypes = () => {
       </Text>
       <div style={{ marginBottom: '12px' }} />
       <div className='display-container'>
+        <Space wrap>
         <Button>Default Button</Button>
         <Button type='primary'>Primary Button</Button>
         <Button type='dashed'>Dashed Button</Button>
         <Button type='textonly'>Text Button</Button>
         <Button type='link'>Link Button</Button>
+        </Space>
       </div>
     </>
   );
@@ -68,17 +70,19 @@ const ButtonMods = () => {
         There are 4 types of mods for conveying state or status. A <Text code>danger</Text> mod for
         signifying dangerous actions such as deleting something, a <Text code>warn</Text> mod for things to alert the user of, and a  
         <Text code>disabled</Text> mod to make a button inoperable and appear unusable.<br />
-        <div style={{ marginBottom: '12px' }} />
+        <Space inline />
         <Text secondary>Use the buttons below to change the displayed mod on the buttons.</Text>
-        <div style={{ marginBottom: '12px' }} />
       </Text>
+      <Space inline />
       <ButtonGroup>
         <Button onClick={() => setButtonMods(undefined)}>Default</Button>
         <Button onClick={() => setButtonMods('danger')}>Danger</Button>
         <Button onClick={() => setButtonMods('warn')}>Warn</Button>
         <Button onClick={() => setButtonMods('disabled')}>Disabled</Button>
       </ButtonGroup>
+      <Space inline />
       <div className='display-container'>
+        <Space wrap>
         <Button type={'default'} mod={buttonMod}>
           Default Button
         </Button>
@@ -94,6 +98,7 @@ const ButtonMods = () => {
         <Button type='link' mod={buttonMod}>
           Link Button
         </Button>
+        </Space>
       </div>
     </>
   );
@@ -109,16 +114,18 @@ const ButtonSizes = () => {
       <Text>
         There are 3 button sizes to choose from. A <Text code>large</Text> size, a <Text code>medium</Text> size, and a  
         <Text code>disabled</Text> size.<br />
-        <div style={{ marginBottom: '12px' }} />
+        <Space inline />
         <Text secondary>Use the buttons below to change the displayed size for the buttons.</Text>
-        <div style={{ marginBottom: '12px' }} />
       </Text>
+      <Space inline />
       <ButtonGroup>
         <Button onClick={() => setButtonSize('small')}>Small</Button>
         <Button onClick={() => setButtonSize('default')}>Default</Button>
         <Button onClick={() => setButtonSize('large')}>Large</Button>
       </ButtonGroup>
+      <Space inline />
       <div className='display-container'>
+        <Space wrap>
         <Button size={buttonSize}>Default Button</Button>
         <Button type='primary' size={buttonSize}>
           Primary Button
@@ -132,6 +139,7 @@ const ButtonSizes = () => {
         <Button type='link' size={buttonSize}>
           Link Button
         </Button>
+        </Space>
       </div>
     </>
   );
@@ -142,6 +150,7 @@ const ButtonIcons = () => {
     <>
       <h3 className='section-header'>Icons</h3>
       <div className='display-container'>
+        <Space wrap>
         <Button iconLeft={<RiDownload2Line />}>Download</Button>
         <Button iconRight={<RiSendPlane2Fill />} type='primary'>
           Send
@@ -153,6 +162,7 @@ const ButtonIcons = () => {
           Text Button
         </Button>
         <Button icon={<RiPhoneFill />}></Button>
+        </Space>
       </div>
     </>
   );
@@ -163,11 +173,13 @@ const ButtonLabels = () => {
     <>
       <h3 className='section-header'>Labels</h3>
       <div className='display-container'>
+        <Space wrap>
         <Button labelLeft='.exe'>Download</Button>
         <Button labelRight='Image' type='primary'>
           Upload
         </Button>
         <Button labelRight='1.3k' icon={<RiHeartFill />}></Button>
+        </Space>
       </div>
     </>
   );
@@ -186,7 +198,9 @@ const ButtonShapes = () => {
         <Button onClick={() => setShape('squircle')}>Squircle</Button>
         <Button onClick={() => setShape('round')}>Round</Button>
       </ButtonGroup>
+      <Space inline />
       <div className='display-container'>
+        <Space wrap>
         <Button shape={shape} type='default'>
           Default Button
         </Button>
@@ -199,6 +213,7 @@ const ButtonShapes = () => {
         <Button shape={shape} type='textonly'>
           Text Button
         </Button>
+        </Space>
       </div>
     </>
   );
@@ -225,6 +240,7 @@ const ButtonCombos = () => {
     <>
       <h3 className='section-header'>Combinations</h3>
       <div className='display-container'>
+        <Space wrap>
         <Button
           shape='square'
           type='primary'
@@ -237,16 +253,15 @@ const ButtonCombos = () => {
           iconRight={<RiDownload2Line />}>
           trunks-ui
         </Button>
-        <div style={{ marginLeft: '8px' }} />
         <ButtonGroup>
-          <Button shape='squircle' icon={<RiSkipBackFill />} />
-          <Button type='primary' icon={<RiPlayFill />} />
-          <Button shape='squircle' icon={<RiSkipForwardFill />} />
+          <Button shape='round' icon={<RiSkipBackFill />} />
+          <Button icon={<RiPlayFill />} />
+          <Button shape='round' icon={<RiSkipForwardFill />} />
         </ButtonGroup>
-        <div style={{ marginLeft: '8px' }} />
         <Button type='dashed' size='small' iconRight={<RiEdit2Fill />}>
           Edit
         </Button>
+        </Space>
       </div>
     </>
   );

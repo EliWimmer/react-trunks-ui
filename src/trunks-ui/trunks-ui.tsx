@@ -6,5 +6,6 @@ import Col from "./layout/col";
 import { Presenter, PresBody, PresDesc} from "./presenter/presenter";
 import { Tag } from "./tag/tag";
 import { Text } from './typography/typography';
+import { Space } from '../trunks-ui/space/space'
 
-export {Card, Select, Button, ButtonGroup, Col, Row, Presenter, PresBody, PresDesc, Tag, Text, CardButton}
+export {Card, Space, Select, Button, ButtonGroup, Col, Row, Presenter, PresBody, PresDesc, Tag, Text, CardButton}
