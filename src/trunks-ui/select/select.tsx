@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createRef, ReactNode, FC } from "react";
-import "./select.css";
+import "./select.sass";
 import { FaChevronDown } from "react-icons/fa";
 
 interface Props {
@@ -123,7 +123,7 @@ const Select: FC<Props> = ({ placeholder, options, size }) => {
           >
             {selected.label ? selected.label : placeholder}
           </span>
-          <span className="dropdown-arrow">
+          <span clicked-={clicked.toString()} className={"dropdown-arrow " + clicked}>
             <FaChevronDown />
           </span>
         </div>
