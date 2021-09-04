@@ -1,5 +1,51 @@
 @use '../trunksui'
-    
+
+@keyframes checkClick
+    0%
+        box-shadow: 0px 0px 0px 0px rgba(30, 136, 229, 60%), trunksui.$shadow-hover-light
+    50%
+        box-shadow: 0px 0px 0px 3px rgba(30, 136, 229, 30%), trunksui.$shadow-hover-light
+    100%
+        box-shadow: 0px 0px 0px 6px rgba(0, 0, 0, 0%), trunksui.$shadow-hover-light
+
+@keyframes switchClickOn
+    0%
+        left: .2rem
+        background: trunksui.$default-lightest
+    50%
+        width: 1.6rem
+    100%
+        left: 2.1rem
+
+@keyframes switchClickOnSmall
+    0%
+        left: .2rem
+        background: trunksui.$default-lightest
+    50%
+        width: 1rem
+    100%
+        left: 1.2rem
+
+@keyframes switchClickOff
+    0%
+        left: 2.1rem
+        background: trunksui.$default-lightest
+    50%
+        width: 1.6rem
+    100%
+        left: .1rem
+        background: trunksui.$default-lightest
+
+@keyframes switchClickOffSmall
+    0%
+        left: 1.2rem
+        background: trunksui.$default-lightest
+    50%
+        width: 1rem
+    100%
+        left: 0rem
+        background: trunksui.$default-lightest
+        
 
 input
     position: absolute
@@ -8,46 +54,156 @@ input
     height: 0
     width: 0
 
-.container
-    display: flex
-    flex-direction: row
+.checkbox-container
+    @include trunksui.flex-row    
     align-items: center
-    position: relative
-    padding-left: 35px
-    margin-bottom: 12px
-    cursor: pointer
-    font-size: 22px
-    -webkit-user-select: none
-    -moz-user-select: none
-    -ms-user-select: none
-    user-select: none
-.checkbox
-    position: relative
-    display: block
-    height: 1rem
-    width: 1rem
-    background-color: trunksui.$default-lightest
-    border: trunksui.$border-default
-    border-radius: 4px
-    margin-right: .5rem
-    transition: trunksui.$transition-quick
     &:hover
+        cursor: pointer
+    .checkbox
+        position: relative
+        height: 1rem
+        width: 1rem
+        border: trunksui.$border-default
+        border-radius: .25rem
+        background: trunksui.$default-lightest
+        margin-right: .5rem
+        transition: trunksui.$transition-quick
+        box-shadow: trunksui.$shadow-default
+    &:hover .checkbox
         border: trunksui.$border-blue
-    &[checked-="true"]
-        background-color: trunksui.$blue-color
-.checkmark
-    position: absolute
-    top: 0
-    left: 0
-    background: none
-    &[checked-="true"]
-        background: none
-        left: 5px
+        box-shadow: trunksui.$shadow-hover-light
+    &.true .checkbox
+        background: trunksui.$blue-color
+        border: trunksui.$border-blue-dark
+        animation: checkClick
+        animation-duration: .3s
+        animation-delay: .1s
+    &:hover.true .checkbox
+        background: trunksui.$blue-light
+    .checkbox-label
+        color: trunksui.$default-darkest
+        font-size: .875rem
+        font-weight: trunksui.$font-semi-bold
+        transition: trunksui.$transition-quick
+        user-select: none
+    &.true.faded .checkbox-label
+        color: trunksui.$default-light
+    &.true.strike .checkbox-label
+        text-decoration: line-through
+        text-decoration-color: trunksui.$default-darkest
+    &.true.strikefaded .checkbox-label
+        text-decoration: line-through
+        text-decoration-color: trunksui.$default-light
+        color: trunksui.$default-light
+        
+    .checkmark
+        display: block
+        position: absolute
+        top: 10px
+        left: 10px
+        height: 0px
+        width: 0px
+        box-sizing: border-box
+        border-right: 0px solid white
+        border-top: 0px solid white
+        border-radius: 0px
+        transform: rotate(140deg)
+        transition: .2s
+    &.true .checkmark
+        display: block
         top: 2px
-        width: 4px
+        left: 2px
         height: 8px
-        border: solid white
-        border-width: 0 3px 3px 0
-        -webkit-transform: rotate(45deg)
-        -ms-transform: rotate(45deg)
-        transform: rotate(45deg)
+        width: 12px
+        border-right: 3px solid white
+        border-top: 3px solid white
+.switch-container
+    @include trunksui.flex-row    
+    align-items: center
+    &:hover
+        cursor: pointer
+    .switch
+        position: relative
+        height: 1.5rem
+        width: 3.5rem
+        box-shadow: trunksui.$shadow-default
+        border-radius: 1rem
+        background: trunksui.$default-lighter
+        border: 2px solid trunksui.$default-lighter
+        margin-left: .5rem
+        transition: trunksui.$transition-quick
+    &.disabled .switch
+        background: trunksui.$default-ultralight
+        border: 2px solid trunksui.$default-ultralight
+    &.true.disabled .switch
+        background: trunksui.$blue-ultralight
+        border: 2px solid trunksui.$blue-ultralight
+    &.small .switch
+        height: .8rem
+        width: 2rem
+    &:hover:not(.disabled) .switch
+        border: 2px solid trunksui.$default-lighter
+    &.true .switch
+        background: trunksui.$blue-color
+        border: 2px solid trunksui.$blue-color
+        animation: checkClick
+        animation-duration: .3s
+        animation-delay: .2s
+    &:hover.true:not(.disabled) .switch
+        background: trunksui.$blue-light
+        box-shadow: trunksui.$shadow-hover-light
+        border: 2px solid trunksui.$blue-light
+    .switch-label
+        color: trunksui.$default-darkest
+        font-size: .875rem
+        font-weight: trunksui.$font-semi-bold
+        transition: trunksui.$transition-quick
+        user-select: none
+    &.true.faded .switch-label
+        color: trunksui.$default-light
+    &.true.strike .switch-label
+        text-decoration: line-through
+        text-decoration-color: trunksui.$default-darkest
+    &.true.strikefaded .switch-label
+        text-decoration: line-through
+        text-decoration-color: trunksui.$default-light
+        color: trunksui.$default-light
+        
+    .switchmark
+        display: block
+        position: absolute
+        top: .1rem
+        left: .2rem
+        height: 1.3rem
+        width: 1.3rem
+        border-radius: 1rem
+        background: trunksui.$white
+        border: 1px solid trunksui.$default-lightest
+        box-sizing: border-box
+        transition: all .3s ease-in-out
+        box-shadow: trunksui.$shadow-default
+    &.small .switchmark
+        height: .8rem
+        width: .8rem
+        top: 0rem
+        left: 0rem
+    &.true .switchmark
+        animation: switchClickOn
+        animation-duration: .3s
+        animation-fill-mode: forwards
+        animation-timing-function: ease-in-out
+    &.true.small .switchmark
+        animation: switchClickOnSmall
+        animation-duration: .3s
+        animation-fill-mode: forwards
+        animation-timing-function: ease-in-out
+    &.false .switchmark
+        animation: switchClickOff
+        animation-duration: .3s
+        animation-fill-mode: forwards
+        animation-timing-function: ease-in-out
+    &.false.small .switchmark
+        animation: switchClickOffSmall
+        animation-duration: .3s
+        animation-fill-mode: forwards
+        animation-timing-function: ease-in-out
