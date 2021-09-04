@@ -12,6 +12,7 @@ import ButtonsPage from './components/buttons-page';
 import CardsPage from './components/cards-page';
 import TagsPage from './components/tags-page';
 import { SelectPage } from './components/select-page';
+import { CheckboxPage } from './components/checkbox-page';
 export default function ComponentsPage() {
   let match = useRouteMatch();
   return (
@@ -146,6 +147,9 @@ export default function ComponentsPage() {
           </Route>
           <Route path={`${match.path}/select`}>
             <SelectPage />
+          </Route>
+          <Route path={`${match.path}/checkbox`}>
+            <CheckboxPage />
           </Route>
         </Switch>
       </div>
