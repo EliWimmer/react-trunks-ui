@@ -5,6 +5,7 @@
     font-size: 14px;
     color: #212121;
     line-height: 160%;
+    max-width: 40rem
 }
 
 .trunks-text.secondary {

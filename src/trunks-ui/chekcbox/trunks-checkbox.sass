@@ -10,40 +10,40 @@
 
 @keyframes switchClickOn
     0%
-        left: .2rem
+        left: 2px
         background: trunksui.$default-lightest
     50%
-        width: 1.6rem
+        width: 24px
     100%
-        left: 2.1rem
+        left: 34px
 
 @keyframes switchClickOnSmall
     0%
-        left: .2rem
+        left: 2px
         background: trunksui.$default-lightest
     50%
-        width: 1rem
+        width: 16px
     100%
-        left: 1.2rem
+        left: 23px
 
 @keyframes switchClickOff
     0%
-        left: 2.1rem
+        left: 34px
         background: trunksui.$default-lightest
     50%
-        width: 1.6rem
+        width: 24px
     100%
-        left: .1rem
+        left: 2px
         background: trunksui.$default-lightest
 
 @keyframes switchClickOffSmall
     0%
-        left: 1.2rem
+        left: 23px
         background: trunksui.$default-lightest
     50%
-        width: 1rem
+        width: 16px
     100%
-        left: 0rem
+        left: 1px
         background: trunksui.$default-lightest
         
 
@@ -97,26 +97,20 @@ input
         color: trunksui.$default-light
         
     .checkmark
-        display: block
+        display: none
         position: absolute
-        top: 10px
-        left: 10px
-        height: 0px
-        width: 0px
+        top: 2px
+        left: 2px
+        height: 8px
+        width: 12px
         box-sizing: border-box
-        border-right: 0px solid white
-        border-top: 0px solid white
+        border-right: 3px solid white
+        border-top: 3px solid white
         border-radius: 0px
         transform: rotate(140deg)
         transition: .2s
     &.true .checkmark
         display: block
-        top: 2px
-        left: 2px
-        height: 8px
-        width: 12px
-        border-right: 3px solid white
-        border-top: 3px solid white
 .switch-container
     @include trunksui.flex-row    
     align-items: center
@@ -124,14 +118,14 @@ input
         cursor: pointer
     .switch
         position: relative
-        height: 1.5rem
-        width: 3.5rem
+        height: 24px
+        width: 56px
         box-shadow: trunksui.$shadow-default
         border-radius: 1rem
         background: trunksui.$default-lighter
         border: 2px solid trunksui.$default-lighter
         margin-left: .5rem
-        transition: trunksui.$transition-quick
+        transition: trunksui.$transistion-default
     &.disabled .switch
         background: trunksui.$default-ultralight
         border: 2px solid trunksui.$default-ultralight
@@ -139,8 +133,8 @@ input
         background: trunksui.$blue-ultralight
         border: 2px solid trunksui.$blue-ultralight
     &.small .switch
-        height: .8rem
-        width: 2rem
+        height: 14px
+        width: 36px
     &:hover:not(.disabled) .switch
         border: 2px solid trunksui.$default-lighter
     &.true .switch
@@ -148,7 +142,7 @@ input
         border: 2px solid trunksui.$blue-color
         animation: checkClick
         animation-duration: .3s
-        animation-delay: .2s
+        animation-delay: .12s
     &:hover.true:not(.disabled) .switch
         background: trunksui.$blue-light
         box-shadow: trunksui.$shadow-hover-light
@@ -172,21 +166,20 @@ input
     .switchmark
         display: block
         position: absolute
-        top: .1rem
-        left: .2rem
-        height: 1.3rem
-        width: 1.3rem
-        border-radius: 1rem
+        top: 2px
+        height: 20px
+        width: 20px
+        border-radius: 100%
         background: trunksui.$white
         border: 1px solid trunksui.$default-lightest
         box-sizing: border-box
         transition: all .3s ease-in-out
         box-shadow: trunksui.$shadow-default
     &.small .switchmark
-        height: .8rem
-        width: .8rem
-        top: 0rem
-        left: 0rem
+        height: 12px
+        width: 12px
+        top: 1px
+        left: 1px
     &.true .switchmark
         animation: switchClickOn
         animation-duration: .3s
@@ -207,3 +200,43 @@ input
         animation-duration: .3s
         animation-fill-mode: forwards
         animation-timing-function: ease-in-out
+
+.tilecb-container
+    display: flex
+    align-items: center
+    justify-content: center
+    border: trunksui.$border-default
+    border-radius: 8px
+    height: 64px
+    width: 64px
+    box-shadow: trunksui.$shadow-default
+    transition: .3s
+    position: relative
+    &.small
+        height: 32px
+        width: 32px
+    
+    &:hover
+        box-shadow: trunksui.$shadow-hover-light
+        transform: translateY(-2px)
+        .tilecb
+            border: trunksui.$border-blue
+    &[mousePress-="true"]
+        background-color: trunksui.$default-ultralight
+    &.true 
+        border: trunksui.$border-blue
+        animation: checkClick
+        animation-duration: .3s
+        .tilecb-icon
+            color: trunksui.$blue-color
+    .tilecb-icon
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 32px
+        width: 32px
+        color: trunksui.$default-dark
+        transition: .3s
+    &.small .tilecb-icon
+        height: 16px
+        width: 16px

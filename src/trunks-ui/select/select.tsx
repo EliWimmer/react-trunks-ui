@@ -1,12 +1,13 @@
-import React, { useState, useEffect, createRef, ReactNode, FC } from "react";
-import "./select.sass";
-import { FaChevronDown } from "react-icons/fa";
+import React, { useState, useEffect, createRef, ReactNode, FC } from 'react';
+import './select.sass';
+import { FaChevronDown } from 'react-icons/fa';
 
 interface Props {
   children?: ReactNode;
   placeholder: string;
   options: any;
   size?: string;
+  onChange?: (arg0: Options) => void
 }
 
 interface Options {
@@ -14,7 +15,7 @@ interface Options {
   label: string;
   extra?: string;
 }
-const Select: FC<Props> = ({ placeholder, options, size }) => {
+const Select: FC<Props> = ({ placeholder, onChange, options, size }) => {
   const [clicked, setClicked] = useState<boolean>(false);
   const [selected, setSelected] = useState<Options>({
     value: `${placeholder}`,
@@ -24,7 +25,7 @@ const Select: FC<Props> = ({ placeholder, options, size }) => {
   const selectedItem = createRef<HTMLLIElement>();
 
   let debounceTimeout: NodeJS.Timeout;
-  let searchTerm: string = "";
+  let searchTerm: string = '';
 
   // Closes options list on click outside
 
@@ -46,29 +47,30 @@ const Select: FC<Props> = ({ placeholder, options, size }) => {
   useEffect(() => {
     selectedItem.current &&
       selectedItem.current.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
+        behavior: 'smooth',
+        block: 'nearest',
       });
-  }, [selected, selectedItem]);
+     onChange !== undefined && onChange(selected)
+  }, [selected, selectedItem, onChange]);
 
   return (
     <>
-      <input type="hidden" value={selected.value} />
-      <div className="select" ref={selectBox}>
+      <input type='hidden' value={selected.value} />
+      <div className='select' ref={selectBox}>
         <div
-          id="select-box"
+          id='select-box'
           tabIndex={0}
-          className={"select-box " + clicked}
+          className={'select-box ' + clicked}
           onMouseUp={() => {
             setClicked((oldState) => !oldState);
           }}
           // Keyboard Controls
           onKeyDown={(e) => {
             switch (e.code) {
-              case "Space":
+              case 'Space':
                 setClicked((oldState) => !oldState);
                 break;
-              case "ArrowUp":
+              case 'ArrowUp':
                 const prevOptionUp: number = options.indexOf(selected) - 1;
                 if (prevOptionUp > -1) {
                   setSelected(options[prevOptionUp]);
@@ -77,7 +79,7 @@ const Select: FC<Props> = ({ placeholder, options, size }) => {
                 }
 
                 break;
-              case "ArrowDown":
+              case 'ArrowDown':
                 const prevOptionDown: number = options.indexOf(selected) + 1;
                 if (prevOptionDown === options.length) {
                   setSelected(options[0]);
@@ -86,14 +88,14 @@ const Select: FC<Props> = ({ placeholder, options, size }) => {
                 }
 
                 break;
-              case "Enter":
+              case 'Enter':
                 if (clicked === true) {
                   setClicked(false);
                 } else {
                   setClicked(true);
                 }
                 break;
-              case "Escape":
+              case 'Escape':
                 if (clicked === true) {
                   setClicked(false);
                 }
@@ -103,7 +105,7 @@ const Select: FC<Props> = ({ placeholder, options, size }) => {
                 clearTimeout(debounceTimeout);
                 searchTerm += e.key;
                 debounceTimeout = setTimeout(() => {
-                  searchTerm = "";
+                  searchTerm = '';
                 }, 500);
 
                 const searchedOption = options.find((option: any) => {
@@ -113,31 +115,31 @@ const Select: FC<Props> = ({ placeholder, options, size }) => {
                 console.log(searchTerm);
             }
           }}
-          clicked-={clicked.toString()}
-        >
+          clicked-={clicked.toString()}>
           {/* the contents of the select box */}
           <span
             className={
-              selected.label !== placeholder ? "is-selected" : "placeholder"
-            }
-          >
+              selected.label !== placeholder ? 'is-selected' : 'placeholder'
+            }>
             {selected.label ? selected.label : placeholder}
           </span>
-          <span clicked-={clicked.toString()} className={"dropdown-arrow " + clicked}>
+          <span
+            clicked-={clicked.toString()}
+            className={'dropdown-arrow ' + clicked}>
             <FaChevronDown />
           </span>
         </div>
 
         <ul
-          id="select-options"
-          className={"select-list-box " + clicked}
-          clicked-={clicked.toString()}
-        >
+          id='select-options'
+          className={'select-list-box ' + clicked}
+          clicked-={clicked.toString()}>
           {options.map((option: any) => (
             <li
-              className={
-                "select-list-item " + (selected === option && "selected-item")
-              }
+              className={`select-list-item ${
+                selected === option ? 'selected-item' : ''
+              } ${clicked}
+              `}
               id={option.value}
               key={option.value}
               extra-={option.extra}
@@ -145,8 +147,7 @@ const Select: FC<Props> = ({ placeholder, options, size }) => {
               onMouseUp={() => {
                 setClicked((oldState) => !oldState);
                 setSelected(option);
-              }}
-            >
+              }}>
               {option.label}
             </li>
           ))}

@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, FC, MouseEvent } from 'react';
+import React, { ReactNode, useState, FC } from 'react';
 import './card.sass';
 
 interface Props {
@@ -32,6 +32,7 @@ export const Card: FC<Props> = ({
   const [clicked, setClicked] = useState<boolean>(false);
 
   return (
+    <>
     <div
       className={`card ${type} hover-${hover} clickable-${clickable} ${clicked}`}
       onClick={() => setClicked(true)}
@@ -50,18 +51,18 @@ export const Card: FC<Props> = ({
       <div className='card-description'>{description}</div>
       <div className='card-buttons'>{buttons}</div>
     </div>
+    </>
   );
 };
 
-interface PlsLord {
-  children?: string;
-  onClick?: () => void;
+interface CardStackProps {
+  children?: ReactNode;
 }
 
-export const CardButton: FC<PlsLord> = (children, onClick) => {
+export const CardStack: FC<CardStackProps> = ({children}) => {
   return (
     <>
-      <button>{children}</button>
+      <div className="card-stack">{children}</div>
     </>
   );
 };

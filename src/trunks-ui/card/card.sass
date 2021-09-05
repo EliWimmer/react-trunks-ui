@@ -13,7 +13,7 @@
 
 .card
   @include trunksui.border-default
-  height: 150px
+  height: fit-content
   width: 300px
   max-width: 25rem
   background: white
@@ -22,18 +22,24 @@
   flex-direction: column
   justify-content: flex-start
   text-align: left
-  transition-duration: 0.5s
+  transition-duration: .5s
 
 .no-card
   display: none
 
 .card-cover
-  padding: .5rem
   box-sizing: border-box
+  width: 300px
+  height: 150px
+  margin: -1px
+  overflow: clip
+  border-radius: 4px 4px 0px 0px
 
   & img
-    width: 100%
-    border-radius: 4px
+    height: 150px
+    width: 300px
+    object-fit: cover
+    
 
 .card.hover-true:hover
   box-shadow: trunksui.$shadow-heavy
@@ -47,7 +53,7 @@
     animation-duration: 0.4s
     animation-iteration-count: 1
 
-.card-header
+.card-header:not(:empty)
   font-weight: 700
   color: #424242
   font-size: 1rem
@@ -69,12 +75,12 @@
   font-size: 14px
 
 .card-content
-  padding: 16px 16px 8px 16px
+  padding: 16px 16px 16px 16px
   line-height: 24px
   font-size: .875rem
   color: #424242
 
-.card-description
+.card-description:not(:empty)
   font-size: 12px
   color: #757575
   padding: 0px 8px 16px 16px
@@ -82,10 +88,33 @@
 card.hover
   background: red
 
-.card-buttons-container
+.card-buttons:not(:empty)
   display: flex
   box-sizing: border-box
-  height: 48px
-  align-items: center
-  justify-items: center
+  height: fit-content
+  align-content: center
+  justify-content: center
   border-top: 1px solid #e0e0e0
+  overflow: clip
+  > *
+    margin: 4px
+
+.card-stack
+  display: flex
+  flex-direction: row
+  position: relative
+  height: auto
+  max-width: 100%
+  padding: 32px 32px 32px 32px
+  overflow: hidden
+  .card:not(:first-child)
+    margin-left: -128px
+  .card
+    position: relative
+    height: auto
+    box-shadow: -12px 0px 12px 0px rgba(0, 0, 0, 4%)
+    &:hover
+      transform: translateY(-12px)
+      box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 6%)
+    &:hover+*
+      margin-left: 12px

@@ -6,7 +6,7 @@ export const SelectPage = () => {
     <>
       <div className='compo-page-container'>
         <div className='compo-page'>
-          <h2>Buttons</h2>
+          <h2>Select</h2>
           <SelectTypes />
         </div>
       </div>
@@ -15,6 +15,11 @@ export const SelectPage = () => {
 };
 
 const SelectTypes = () => {
+
+  const handleChange = (selected:any) => {
+    console.log(selected)
+  }
+
   return (
     <>
       <h3 className='section-header'>Types</h3>
@@ -22,9 +27,19 @@ const SelectTypes = () => {
       <div className='display-container'>
         <Space wrap>
           <Select
+          onChange={handleChange}
             options={[
-              { value: 'boobs', label: 'Boobs' },
-              { value: 'more boobs', label: 'moree boobs' },
+              { value: 'pizza', label: 'Pizza' },
+              { value: 'broccoli', label: 'Broccoli' },
+              { value: 'apple', label: 'Apple' },
+              { value: 'cheese', label: 'Cheese' },
+              { value: 'noodles', label: 'Noodles' },
+              { value: 'hotdog', label: 'Hot Dog' },
+              { value: 'burrito', label: 'Burrito' },
+              { value: 'egg', label: 'Egg' },
+              { value: 'milk', label: 'Milk' },
+              { value: 'potato', label: 'Potato' },
+              { value: 'crepe', label: 'Crepe' },
             ]}
             placeholder='Choose...'></Select>
         </Space>

@@ -17,19 +17,23 @@ import {
 export default function ButtonsPage() {
   return (
     <>
-      <div className='compo-page-container'>
-        <div className='compo-page'>
         <h2>Buttons</h2>
+          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
           <ButtonTypes />
+          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
           <ButtonMods />
+          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
           <ButtonSizes />
+          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
           <ButtonIcons />
+          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
           <ButtonLabels />
+          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
           <ButtonShapes />
+          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
           <ButtonGroups />
+          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
           <ButtonCombos />
-        </div>
-      </div>
     </>
   );
 }
@@ -45,7 +49,6 @@ const ButtonTypes = () => {
         secondary use, and a <Text code>link</Text> button. All buttons have a default margin of 8px.
       </Text>
       <div style={{ marginBottom: '12px' }} />
-      <div className='display-container'>
         <Space wrap>
         <Button>Default Button</Button>
         <Button type='primary'>Primary Button</Button>
@@ -53,7 +56,6 @@ const ButtonTypes = () => {
         <Button type='textonly'>Text Button</Button>
         <Button type='link'>Link Button</Button>
         </Space>
-      </div>
     </>
   );
 };

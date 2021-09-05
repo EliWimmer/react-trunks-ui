@@ -3,7 +3,7 @@ import './App.sass';
 import { BrowserRouter as Router, Switch, Route, Link, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Home from './components/pages/home';
-import { Button, Card, CardButton, Row } from './trunks-ui/trunks-ui';
+import { Button, Card, CardStack, Row } from './trunks-ui/trunks-ui';
 import GettingStarted from './components/pages/getting-started';
 import ComponentsPage from './components/pages/components';
 
@@ -12,7 +12,6 @@ export default function App() {
   return (
     <>
       <Router>
-        <div className='main'>
           <div className='header'>
             <h1 className='site-title'>
               <Link to='/home'>{`{ trunks-ui }`}</Link>
@@ -46,7 +45,7 @@ export default function App() {
           </div>
 
          
-          <div className='body'>
+
             <Switch>
               <Route path='/home'>
                 <Home />
@@ -58,9 +57,6 @@ export default function App() {
                 <ComponentsPage />
               </Route>
             </Switch>
-          </div>
-
-        </div>
       </Router>
       
     </>
