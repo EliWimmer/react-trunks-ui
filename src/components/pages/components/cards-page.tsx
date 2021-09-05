@@ -4,20 +4,20 @@ import {
   Card,
   CardStack,
   Text,
+  TextBlock,
   Space,
+  Divider,
 } from '../../../trunks-ui/trunks-ui';
 import { RiSettings4Fill, RiEdit2Fill, RiShareFill } from 'react-icons/ri';
 export default function CardsPage() {
   return (
     <>
-      <div className='compo-page-container'>
-        <div className='compo-page'>
+          <Text size={2}>Card</Text>
+          <Text>Cards are great for displaying information within a certain context.</Text>
           <CardDefault />
           <CardButtons />
           <CardCovers />
           <CardStacks />
-        </div>
-      </div>
     </>
   );
 }
@@ -25,15 +25,15 @@ export default function CardsPage() {
 const CardDefault = () => {
   return (
     <>
-      <h3 className='section-header'>Default</h3>
-      <Text>
+      <Text size={3}>Basic Usage</Text>
+      <TextBlock>
         There are 5 types of icons. A <Text code>default</Text> button for
         general use, a <Text code>primary</Text> button for emphasis, a{' '}
         <Text code>dashed</Text> and <Text code>textonly</Text> button for
         secondary use, and a <Text code>link</Text> button. All buttons have a
         default margin of 8px.
-      </Text>
-      <div className='display-container'>
+      </TextBlock>
+      <Space inline />
         <Space wrap>
           <Card title='Basic Card'>
             This is a default card with text and a title! 👍
@@ -48,7 +48,7 @@ const CardDefault = () => {
             You can also omit all of that altogether for a very simple card.
           </Card>
         </Space>
-      </div>
+        <Space inline />
     </>
   );
 };
@@ -56,8 +56,8 @@ const CardDefault = () => {
 const CardButtons = () => {
   return (
     <>
-      <h3 className='section-header'>Buttons</h3>
-      <div className='display-container'>
+      <Text size={3}>Buttons</Text>
+      <Space inline />
         <Space wrap>
           <Card
             buttons={
@@ -87,8 +87,8 @@ const CardButtons = () => {
             A card with icon buttons. Same settings as the previous card, but
             without children (label), and an icon attribute.
           </Card>
+          <Space inline />
         </Space>
-      </div>
     </>
   );
 };
@@ -96,15 +96,15 @@ const CardButtons = () => {
 const CardCovers = () => {
   return (
     <>
-      <h3 className='section-header'>Cover Image</h3>
-      <div className='display-container'>
+      <Text size={3}>Cover Image</Text>
+      <Space inline />
         <Card
           cover='https://images.unsplash.com/photo-1615731439720-47878ecc1ac6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80'
           title='Cover Image'>
           Cards can have a cover image. The image is set to fill the space
           vertically and crop out the sides as needed to keep them uniform.
         </Card>
-      </div>
+        <Space inline />
     </>
   );
 };
@@ -112,8 +112,8 @@ const CardCovers = () => {
 const CardStacks = () => {
   return (
     <>
-      <h3 className='section-header'>Stack</h3>
-      <div className='display-container'>
+      <Text size={3}>Stack</Text>
+      <Space inline />
         <CardStack>
           <Card
             description="From Unsplash.com"
@@ -151,7 +151,7 @@ const CardStacks = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Card>
         </CardStack>
-      </div>
+        <Space inline />
     </>
   );
 };

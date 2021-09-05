@@ -3,7 +3,7 @@ import './App.sass';
 import { BrowserRouter as Router, Switch, Route, Link, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Home from './components/pages/home';
-import { Button, Card, CardStack, Row } from './trunks-ui/trunks-ui';
+import { Button, Card, CardStack, Row, Text } from './trunks-ui/trunks-ui';
 import GettingStarted from './components/pages/getting-started';
 import ComponentsPage from './components/pages/components';
 

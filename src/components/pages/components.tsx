@@ -1,3 +1,4 @@
+import React, {useState, useEffect, useRef} from 'react';
 import './styles/components.sass';
 import {
   BrowserRouter as Router,
@@ -14,13 +15,19 @@ import TagsPage from './components/tags-page';
 import { SelectPage } from './components/select-page';
 import { CheckboxPage } from './components/checkbox-page';
 import { Space } from '../../trunks-ui/trunks-ui';
+import { TextPage } from './components/text-page';
+import {BiMenu} from 'react-icons/bi'
+import { InputPage } from './components/input-page';
+
 export default function ComponentsPage() {
+  const [showMobile, setShowMobile] = useState(false)
+  
   let match = useRouteMatch();
   return (
     <>
-    <div className="page-container">
-      <nav className='side-menu'>
-        <Space inline />
+      <div onClick={() => setShowMobile((oldState) => !oldState)} className="menu-button"><BiMenu size="32" /></div>
+      <nav className={`side-menu ${showMobile ? 'show-mobile' : 'hide-mobile'}`}>
+        <Space size="small" inline direction="vertical" />
         <NavLink
           className='menu-item'
           activeClassName='menu-item-selected'
@@ -29,7 +36,7 @@ export default function ComponentsPage() {
         </NavLink>
 
         {/* MENU HEADER */}
-        <Space inline />
+        <Space size="small" inline />
         <div className='menu-divider' />
         <span
           style={{
@@ -85,7 +92,7 @@ export default function ComponentsPage() {
         </NavLink>
 
         {/* MENU HEADER */}
-        <Space inline />
+        <Space size="small" inline />
         <div className='menu-divider' />
         <span
           style={{
@@ -125,7 +132,7 @@ export default function ComponentsPage() {
         </NavLink>
 
         {/* MENU HEADER */}
-        <Space inline />
+        <Space size="small" inline />
         <div className='menu-divider' />
         <span
           style={{
@@ -165,7 +172,7 @@ export default function ComponentsPage() {
         </NavLink>
 
         {/* MENU HEADER */}
-        <Space inline />
+        <Space size="small" inline />
         <div className='menu-divider' />
         <span
           style={{
@@ -221,7 +228,7 @@ export default function ComponentsPage() {
         </NavLink>
 
         {/* MENU HEADER */}
-        <Space inline />
+        <Space size="small" inline />
         <div className='menu-divider' />
         <span
           style={{
@@ -287,8 +294,13 @@ export default function ComponentsPage() {
           <Route path={`${match.path}/checkbox`}>
             <CheckboxPage />
           </Route>
+          <Route path={`${match.path}/text`}>
+            <TextPage />
+          </Route>
+          <Route path={`${match.path}/input`}>
+            <InputPage />
+          </Route>
         </Switch>
-      </div>
       </div>
     </>
   );

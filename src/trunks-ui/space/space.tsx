@@ -3,7 +3,7 @@ import './space.sass'
 interface Props {
     children?: ReactNode;
     direction?: "vertical" | "horizontal"
-    size?: "small" | "medium" | "large"
+    size?: "small" | "medium" | "large" | "none"
     inline?: boolean
     wrap?: boolean
     fill?: boolean

@@ -1,5 +1,5 @@
 import React, { ReactNode, useState, FC } from 'react';
-import './card.sass';
+import './trunks-card.sass';
 
 interface Props {
   type?: string;
@@ -62,7 +62,11 @@ interface CardStackProps {
 export const CardStack: FC<CardStackProps> = ({children}) => {
   return (
     <>
-      <div className="card-stack">{children}</div>
+    <div className="card-stack-container">
+      <div className="card-stack">
+        {children}
+        </div>
+        </div>
     </>
   );
 };

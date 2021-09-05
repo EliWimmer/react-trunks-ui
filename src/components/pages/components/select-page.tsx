@@ -1,12 +1,12 @@
 import React from 'react';
-import { Select, Space } from '../../../trunks-ui/trunks-ui';
+import { Select, Space, Text } from '../../../trunks-ui/trunks-ui';
 
 export const SelectPage = () => {
   return (
     <>
       <div className='compo-page-container'>
         <div className='compo-page'>
-          <h2>Select</h2>
+          <Text size={2}>Select</Text>
           <SelectTypes />
         </div>
       </div>
@@ -22,9 +22,7 @@ const SelectTypes = () => {
 
   return (
     <>
-      <h3 className='section-header'>Types</h3>
-      <Space inline />
-      <div className='display-container'>
+      <Text size={3}>Basic Select</Text>
         <Space wrap>
           <Select
           onChange={handleChange}
@@ -43,7 +41,6 @@ const SelectTypes = () => {
             ]}
             placeholder='Choose...'></Select>
         </Space>
-      </div>
     </>
   );
 };

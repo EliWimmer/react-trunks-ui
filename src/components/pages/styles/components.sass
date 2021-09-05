@@ -1,55 +1,97 @@
 @import '../../../trunks-ui/trunksui'
+@media screen and (min-width: 700px)
+    .menu-button
+        display: none
+    .side-menu
+        position: relative
+        grid-column: 1 / 5
+        grid-row: 2 / span 23
+        border-right: $border-default
+        font-size: 14px
+        font-weight: 400
+        display: flex
+        flex-direction: column
+        padding-bottom: 24px
+        margin-right: 48px
+        overflow: overlay
+        min-width: 240px
+        .menu-item
+            color: $default-darkest
+            padding: 12px 0px 12px 28px
+            border-radius: 4px
+            box-sizing: border-box
+            &:hover
+                cursor: pointer
+                color: $blue-color
+        .menu-item-selected
+                color: $blue-color
+    .menu-divider
+        height: 1px
+        background-color: $default-lighter
 
-.side-menu
-    position: fixed
-    left: 0px
-    top:64px
-    width: 200px
-    border-right: $border-default
-    font-size: 14px
-    font-weight: 400
-    display: flex
-    flex-direction: column
-    padding-bottom: 78px
-    border-bottom: $border-default
-    overflow: overlay
+    .display-area
+        grid-column: 5 /span 21
+        grid-row: 2 / span 23
+        display: relative
+        padding-top: 36px
+        padding-right: 48px
+        overflow-y: scroll
+        justify-self: stretch
 
-    .menu-item
-        color: $default-darkest
-        padding: 12px 0px 12px 28px
-        border-radius: 4px
+
+@media screen and (max-width: 700px)
+    .menu-button.show-mobile
+        display: flex
+        position: fixed
+        top: 78px
+        left: -1px
+        padding-left: 4px
+        z-index: 999
+        color: $default-dark
+        background-color: $default-ultralight
+        border: $border-default
         box-sizing: border-box
-        &:hover
-            cursor: pointer
-            color: $blue-color
-    .menu-item-selected
-            color: $blue-color
-.menu-divider
-    height: 1px
-    background-color: $default-lighter
+        border-radius: 0px 4px 4px 0px
 
-.display-area
-    display: relative
-    height: 100%
-    top: 0px
-    overflow-y: scroll
-    padding: 36px 0px 64px 248px
-    flex-grow: 1
-.page-container
-    display: flex
-    flex-direction: row
-    position: sticky
-    top: 0px
-    height:100%
-    width: 100%
+    .menu-button.hide-menu
+        display: none
+    .side-menu.hide-mobile
+        display: none
+    .side-menu.show-mobile
+        background-color: $white
+        position: absolute
+        top: 0px
+        grid-column: 1 / 5
+        grid-row: 2 / span 23
+        border-right: $border-default
+        font-size: 14px
+        font-weight: 400
+        display: flex
+        flex-direction: column
+        padding-bottom: 24px
+        margin-right: 12px
+        overflow: overlay
+        width:100%
+        z-index: 998
+        .menu-item
+            color: $default-darkest
+            padding: 12px 0px 12px 28px
+            border-radius: 4px
+            box-sizing: border-box
+            &:hover
+                cursor: pointer
+                color: $blue-color
+        .menu-item-selected
+                color: $blue-color
+    .menu-divider
+        height: 1px
+        background-color: $default-lighter
 
-.display-container
-  display: flex
-  position: relative
-  flex-direction: row
-  border-radius: .25rem
-  padding: 2rem
-  justify-content: flex-start
-  flex-wrap: wrap
-  align-items: center
-  width: fit-content
+    .display-area
+        grid-column: 2 /span 23
+        grid-row: 2 / span 23
+        display: relative
+        padding-top: 36px
+        padding-right: 12px
+        overflow-y: scroll
+        justify-self: stretch

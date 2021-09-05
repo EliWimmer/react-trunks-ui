@@ -2,21 +2,60 @@
 
 .trunks-space:not(.inline)
     display: flex
-    align-content: center
-    align-items: center
     &.default > *
-        margin: .5rem
+        margin: 16px
+    &.none > *
+        margin: 0px
     &.small > *
-        margin: .25rem
+        margin: 8px
     &.large > *
-        margin: 1rem
+        margin: 32px
     &.wrap
         flex-wrap: wrap
+    &.align
+        align-content: center
+        align-items: center
+    &.vertical
+        flex-direction: column
+        &.default > *
+            margin: 16px 0px
+        &.small > *
+            margin: 8px 0px
+        &.large > *
+            margin: 32px 0px
+        &.none > *
+            margin: 0px
+    &.horizontal
+        flex-direction: row
+        &.default > *
+            margin: 0px 16px
+        &.small > *
+            margin: 16px 8px
+        &.large > *
+            margin: 0px 32px
+        &.none > *
+            margin: 0px
+    
 
 .trunks-space.inline
     &.default
-        margin: .5rem
+        padding: 16px
     &.small
-        margin: .25rem
+        padding: 8px
     &.large
-        margin: 1rem
+        padding: 32px
+    &.vertical
+        &.default
+            padding: 16px 0px
+        &.small
+            padding: 8px 0px
+        &.large
+            padding: 32px 0px
+    &.horizontal
+        &.default
+            padding: 0px 16px
+        &.small
+            padding: 16px 8px
+        &.large
+            padding: 0px 32px
+    

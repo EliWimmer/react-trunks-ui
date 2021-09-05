@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Button, ButtonGroup, Text, Space } from '../../../trunks-ui/trunks-ui';
+import {
+  Button,
+  ButtonGroup,
+  Text,
+  TextBlock,
+  Space,
+  Divider,
+} from '../../../trunks-ui/trunks-ui';
 import {
   RiSendPlane2Fill,
   RiArrowRightSLine,
@@ -17,23 +24,31 @@ import {
 export default function ButtonsPage() {
   return (
     <>
-        <h2>Buttons</h2>
-          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
-          <ButtonTypes />
-          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
-          <ButtonMods />
-          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
-          <ButtonSizes />
-          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
-          <ButtonIcons />
-          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
-          <ButtonLabels />
-          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
-          <ButtonShapes />
-          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
-          <ButtonGroups />
-          <div style={{height: "1px", background: '#EEEEEE', width: "100%"}} />
-          <ButtonCombos />
+      <Text size={2}>Buttons</Text>
+      <TextBlock>
+        Buttons are most often triggers for actions, or to bring emphasis to
+        links. With thousands of possible combinations, trunks-ui offers a
+        button for every use case.
+      </TextBlock>
+      <Space size="small" inline />
+      <Divider />
+      <ButtonTypes />
+      <Divider />
+      <ButtonMods />
+      <Divider />
+      <ButtonSizes />
+      <Divider />
+      <ButtonFill />
+      <Divider />
+      <ButtonIcons />
+      <Divider />
+      <ButtonLabels />
+      <Divider />
+      <ButtonShapes />
+      <Divider />
+      <ButtonGroups />
+      <Divider />
+      <ButtonCombos />
     </>
   );
 }
@@ -41,21 +56,23 @@ export default function ButtonsPage() {
 const ButtonTypes = () => {
   return (
     <>
-      <h3 className='section-header'>Types</h3>
-      <Text>
+      <Text size={3}>Types</Text>
+      <TextBlock>
         There are 5 types of icons. A <Text code>default</Text> button for
         general use, a <Text code>primary</Text> button for emphasis, a{' '}
         <Text code>dashed</Text> and <Text code>textonly</Text> button for
-        secondary use, and a <Text code>link</Text> button. All buttons have a default margin of 8px.
-      </Text>
-      <div style={{ marginBottom: '12px' }} />
-        <Space wrap>
+        secondary use, and a <Text code>link</Text> button. All buttons have a
+        default margin of 8px.
+      </TextBlock>
+      <Space inline />
+      <Space wrap>
         <Button>Default Button</Button>
         <Button type='primary'>Primary Button</Button>
         <Button type='dashed'>Dashed Button</Button>
         <Button type='textonly'>Text Button</Button>
         <Button type='link'>Link Button</Button>
-        </Space>
+      </Space>
+      <Space inline />
     </>
   );
 };
@@ -64,27 +81,35 @@ const ButtonMods = () => {
   const [buttonMod, setButtonMods] = useState<
     'disabled' | 'warn' | 'danger' | undefined
   >(undefined);
-  <h3 className='section-header'>Mods</h3>;
   return (
     <>
-      <h3 className='section-header'>Mods</h3>
-      <Text>
-        There are 4 types of mods for conveying state or status. A <Text code>danger</Text> mod for
-        signifying dangerous actions such as deleting something, a <Text code>warn</Text> mod for things to alert the user of, and a  
-        <Text code>disabled</Text> mod to make a button inoperable and appear unusable.<br />
-        <Space inline />
-        <Text secondary>Use the buttons below to change the displayed mod on the buttons.</Text>
-      </Text>
-      <Space inline />
+      <Text size={3}>Mods</Text>
+      <TextBlock>
+        There are 4 types of mods for conveying state or status. A{' '}
+        <Text code>danger</Text> mod for signifying dangerous actions such as
+        deleting something, a <Text code>warn</Text> mod for things to alert the
+        user of, and a<Text code>disabled</Text> mod to make a button inoperable
+        and appear unusable.
+        <br />
+        <Space size='small' inline />
+        <Text secondary>Change mod:</Text>
+      </TextBlock>
       <ButtonGroup>
-        <Button onClick={() => setButtonMods(undefined)}>Default</Button>
-        <Button onClick={() => setButtonMods('danger')}>Danger</Button>
-        <Button onClick={() => setButtonMods('warn')}>Warn</Button>
-        <Button onClick={() => setButtonMods('disabled')}>Disabled</Button>
+        <Button type='textonly' onClick={() => setButtonMods(undefined)}>
+          Default
+        </Button>
+        <Button type='textonly' onClick={() => setButtonMods('danger')}>
+          Danger
+        </Button>
+        <Button type='textonly' onClick={() => setButtonMods('warn')}>
+          Warn
+        </Button>
+        <Button type='textonly' onClick={() => setButtonMods('disabled')}>
+          Disabled
+        </Button>
       </ButtonGroup>
       <Space inline />
-      <div className='display-container'>
-        <Space wrap>
+      <Space wrap>
         <Button type={'default'} mod={buttonMod}>
           Default Button
         </Button>
@@ -100,8 +125,8 @@ const ButtonMods = () => {
         <Button type='link' mod={buttonMod}>
           Link Button
         </Button>
-        </Space>
-      </div>
+      </Space>
+      <Space inline />
     </>
   );
 };
@@ -112,22 +137,28 @@ const ButtonSizes = () => {
   >('default');
   return (
     <>
-      <h3 className='section-header'>Sizes</h3>
-      <Text>
-        There are 3 button sizes to choose from. A <Text code>large</Text> size, a <Text code>medium</Text> size, and a  
-        <Text code>disabled</Text> size.<br />
-        <Space inline />
-        <Text secondary>Use the buttons below to change the displayed size for the buttons.</Text>
-      </Text>
-      <Space inline />
+      <Text size={3}>Sizes</Text>
+      <TextBlock>
+        There are 3 button sizes to choose from. A <Text code>large</Text> size,
+        a <Text code>default</Text> size, and a <Text code>small</Text> size. If
+        needing bigger buttons or buttons with a lot more context and data,
+        consider using <Text link>Cards</Text>.
+        <Space size='small' inline />
+        <Text secondary>Change size:</Text>
+      </TextBlock>
       <ButtonGroup>
-        <Button onClick={() => setButtonSize('small')}>Small</Button>
-        <Button onClick={() => setButtonSize('default')}>Default</Button>
-        <Button onClick={() => setButtonSize('large')}>Large</Button>
+        <Button type='textonly' onClick={() => setButtonSize('small')}>
+          Small
+        </Button>
+        <Button type='textonly' onClick={() => setButtonSize('default')}>
+          Default
+        </Button>
+        <Button type='textonly' onClick={() => setButtonSize('large')}>
+          Large
+        </Button>
       </ButtonGroup>
       <Space inline />
-      <div className='display-container'>
-        <Space wrap>
+      <Space wrap>
         <Button size={buttonSize}>Default Button</Button>
         <Button type='primary' size={buttonSize}>
           Primary Button
@@ -141,8 +172,31 @@ const ButtonSizes = () => {
         <Button type='link' size={buttonSize}>
           Link Button
         </Button>
-        </Space>
-      </div>
+      </Space>
+      <Space inline />
+    </>
+  );
+};
+
+const ButtonFill = () => {
+  return (
+    <>
+      <Text size={3}>Fill</Text>
+      <TextBlock>
+        Buttons can have the boolean attribute <Text code>fill</Text> to fit the
+        width of their parent container.
+      </TextBlock>
+      <Space inline />
+      <Space wrap>
+        <Button fill>Default Button</Button>
+        <Button fill type='primary'>
+          Primary Button
+        </Button>
+        <Button fill type='textonly'>
+          Text Button
+        </Button>
+      </Space>
+      <Space inline />
     </>
   );
 };
@@ -150,9 +204,15 @@ const ButtonSizes = () => {
 const ButtonIcons = () => {
   return (
     <>
-      <h3 className='section-header'>Icons</h3>
-      <div className='display-container'>
-        <Space wrap>
+      <Text size={3}>Icons</Text>
+      <TextBlock>
+        Buttons can have icons. Use <Text code>iconLeft</Text> or{' '}
+        <Text code>iconRight</Text> for buttons with text, or use just{' '}
+        <Text code>icon</Text> for icon only buttons. Icons work on all types,
+        shapes, and sizes.
+      </TextBlock>
+      <Space inline />
+      <Space wrap>
         <Button iconLeft={<RiDownload2Line />}>Download</Button>
         <Button iconRight={<RiSendPlane2Fill />} type='primary'>
           Send
@@ -164,8 +224,8 @@ const ButtonIcons = () => {
           Text Button
         </Button>
         <Button icon={<RiPhoneFill />}></Button>
-        </Space>
-      </div>
+      </Space>
+      <Space inline />
     </>
   );
 };
@@ -173,16 +233,23 @@ const ButtonIcons = () => {
 const ButtonLabels = () => {
   return (
     <>
-      <h3 className='section-header'>Labels</h3>
-      <div className='display-container'>
-        <Space wrap>
-        <Button labelLeft='.exe'>Download</Button>
+      <Text size={3}>Labels</Text>
+      <TextBlock>
+        Buttons can have lebels for added context. Use{' '}
+        <Text code>labelLeft</Text> or <Text code>labelRight</Text> to add a
+        label. Labels can take a string or an icon component. Labels work on all
+        types, shapes, and sizes, though they do not work on button groups.
+        <br />
+      </TextBlock>
+      <Space inline />
+      <Space wrap>
+        <Button labelLeft={'.exe'}>Download</Button>
         <Button labelRight='Image' type='primary'>
           Upload
         </Button>
         <Button labelRight='1.3k' icon={<RiHeartFill />}></Button>
-        </Space>
-      </div>
+      </Space>
+      <Space inline />
     </>
   );
 };
@@ -193,16 +260,31 @@ const ButtonShapes = () => {
   >(undefined);
   return (
     <>
-      <h3 className='section-header'>Shapes</h3>
+      <Text size={3}>Shapes</Text>
+      <TextBlock>
+        There are 4 button shapes to choose from. The <Text code>default</Text>{' '}
+        shaped, a <Text code>square</Text> shape, a <Text code>squircle</Text>{' '}
+        shape, and a <Text code>round</Text> shape. Shapes work on all types and
+        sizes, as well as buttons with labels and button groups.
+        <Space size='small' inline />
+        <Text secondary>Change shape:</Text>
+      </TextBlock>
       <ButtonGroup>
-        <Button onClick={() => setShape(undefined)}>Default</Button>
-        <Button onClick={() => setShape('square')}>Square</Button>
-        <Button onClick={() => setShape('squircle')}>Squircle</Button>
-        <Button onClick={() => setShape('round')}>Round</Button>
+        <Button type='textonly' onClick={() => setShape(undefined)}>
+          Default
+        </Button>
+        <Button type='textonly' onClick={() => setShape('square')}>
+          Square
+        </Button>
+        <Button type='textonly' onClick={() => setShape('squircle')}>
+          Squircle
+        </Button>
+        <Button type='textonly' onClick={() => setShape('round')}>
+          Round
+        </Button>
       </ButtonGroup>
       <Space inline />
-      <div className='display-container'>
-        <Space wrap>
+      <Space wrap>
         <Button shape={shape} type='default'>
           Default Button
         </Button>
@@ -215,8 +297,8 @@ const ButtonShapes = () => {
         <Button shape={shape} type='textonly'>
           Text Button
         </Button>
-        </Space>
-      </div>
+      </Space>
+      <Space inline />
     </>
   );
 };
@@ -224,15 +306,34 @@ const ButtonShapes = () => {
 const ButtonGroups = () => {
   return (
     <>
-      <h3 className='section-header'>Button Groups</h3>
-      <div className='display-container'>
+      <Text size={3}>Button Groups</Text>
+      <TextBlock>
+        Buttons can be grouped together. Use the <Text code>ButtonGroup</Text>{' '}
+        element around a collection of buttons to use. Button Groups work with
+        all types, icons, mods, shapes, and sizes, though they do not work with
+        labels. For size, apply size to every child button. For shape apply
+        shape to the first and last child buttons. For type, apply to each
+        button.
+      </TextBlock>
+      <Space inline />
+      <Space wrap>
         <ButtonGroup>
           <Button>One</Button>
           <Button>Two</Button>
           <Button>Three</Button>
           <Button>Four</Button>
         </ButtonGroup>
-      </div>
+        <ButtonGroup>
+          <Button shape='round' type='primary'>
+            Primary
+          </Button>
+          <Button type='primary'>Button</Button>
+          <Button shape='round' type='primary'>
+            Type
+          </Button>
+        </ButtonGroup>
+      </Space>
+      <Space inline />
     </>
   );
 };
@@ -240,14 +341,18 @@ const ButtonGroups = () => {
 const ButtonCombos = () => {
   return (
     <>
-      <h3 className='section-header'>Combinations</h3>
-      <div className='display-container'>
-        <Space wrap>
+      <Text size={3}>Combinations</Text>
+      <TextBlock>
+        Just about every attribute for buttons can be combined. Experiment with
+        combinations for interesting results.
+      </TextBlock>
+      <Space inline />
+      <Space wrap>
         <Button
           shape='square'
           type='primary'
           labelRight='3.4k'
-          icon={<RiGithubFill/>}
+          icon={<RiGithubFill />}
         />
         <Button
           shape='round'
@@ -263,8 +368,8 @@ const ButtonCombos = () => {
         <Button type='dashed' size='small' iconRight={<RiEdit2Fill />}>
           Edit
         </Button>
-        </Space>
-      </div>
+      </Space>
+      <Space inline />
     </>
   );
 };

@@ -1,0 +1,79 @@
+@use '../trunksui'
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap")
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap')
+
+.text-block
+    max-width: 45rem
+    font-size: 14px
+    color: trunksui.$default-darkest
+    line-height: 180%
+.trunks-text
+    font-size: 14px
+    color: trunksui.$default-darkest
+    line-height: 180%
+    max-width: 45rem
+    &.h1, &.h2, &.h3, &.h4, &.h5
+        font-weight: 700
+        display: block
+        margin: 16px 0px
+    &.h1
+        font-size: 2.5rem
+    &.h2
+        font-size: 2rem
+    &.h3
+        font-size: 1.5rem
+    &.h4
+        font-size: 1.2rem
+    &.h5
+        font-size: 1rem
+    &.secondary
+        color: trunksui.$default-color
+    &.success
+        color: trunksui.$green-color
+    &.warning
+        color: trunksui.$amber-color
+    &.danger
+        color: trunksui.$red-color
+    &.disabled
+        color: trunksui.$default-light
+    &.bold
+        font-weight: 700
+    &.highlight
+        background-color: trunksui.$orange-ultralight
+        border-radius: 4px
+        width: fit-content
+        padding: 0px 4px
+        box-sizing: border-box
+    &.code
+        font-family: 'Azeret Mono', monospace
+        background-color: trunksui.$default-ultralight
+        border: 1px solid trunksui.$default-lighter
+        border-radius: 4px
+        padding: 0px 4px
+        color: trunksui.$default-darkest
+        width: fit-content
+        box-sizing: border-box
+        height: 25.19px
+        display: inline-block
+    &.keyboard
+        background-color: trunksui.$default-ultralight
+        height: 25.19px
+        border-radius: 4px
+        padding: 0px 4px
+        box-shadow: 0px 2px 0px 0px trunksui.$default-lighter
+        width: fit-content
+        color: trunksui.$default-dark
+        margin: 0px 2px
+        box-sizing: border-box
+    &.underline
+        text-decoration: underline
+    &.strike
+        text-decoration: line-through
+    &.italic
+        font-style: italic
+    &.link
+        color: trunksui.$blue-color
+        cursor: pointer
+        &:hover
+            color: trunksui.$blue-lighter

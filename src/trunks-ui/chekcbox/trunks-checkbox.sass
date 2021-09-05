@@ -47,16 +47,17 @@
         background: trunksui.$default-lightest
         
 
-input
-    position: absolute
-    opacity: 0
-    cursor: pointer
-    height: 0
-    width: 0
+
 
 .checkbox-container
     @include trunksui.flex-row    
     align-items: center
+    input
+        position: absolute
+        opacity: 0
+        cursor: pointer
+        height: 0
+        width: 0
     &:hover
         cursor: pointer
     .checkbox

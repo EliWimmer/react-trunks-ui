@@ -1,0 +1,35 @@
+@use '../trunksui'
+
+.input-container
+    display: flex
+    font-size: 14px
+    height: fit-content
+    font-family: 'Mulish', sans-serif
+    .trunks-input
+        height: 32px
+        width: 200px
+        background: trunksui.$white
+        border: trunksui.$border-default
+        border-radius: 4px
+        box-shadow: trunksui.$shadow-default
+        transition: .5s
+        padding: 0px 8px 0px 8px
+        &:focus
+            outline: none
+            border: trunksui.$border-blue
+        &.input-label:not(:empty)
+            border-radius: 0px 4px 4px 0px
+    .input-label:not(:empty)
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 32px
+        background: trunksui.$white
+        border: 1px solid trunksui.$default-lighter
+        border-radius: 4px 0px 0px 4px
+        border-right: 0px
+        padding: 0px 8px 0px 8px
+        background-color: trunksui.$default-ultralight
+    
+    
+        

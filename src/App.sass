@@ -1,31 +1,61 @@
 @import './trunks-ui/trunksui'
-.header
-  width: 100%
-  background-color: $default-lightest
-  height: 4rem
-  display: flex
-  flex-direction: row
-  align-items: center
-  box-shadow: $shadow-default
-  position: sticky
-  top: 0px
-  z-index: 100
+@media screen and (min-width: 700px)
+  .header
+    grid-column: 1 / span 24
+    justify-self: stretch
+    background-color: $default-lightest
+    height: 4rem
+    display: flex
+    flex-direction: row
+    align-items: center
+    box-shadow: $shadow-default
+    z-index: 100
 
-.site-title
-  padding: 0px 0px 0px 24px
-  margin: 0px 0px 0px 0px
-  flex-grow: 1
-  display: flex
-  align-content: center
-  a
-    font-weight: 600
-    color: $blue-color
-    font-size: 24px
-    transition-duration: .3s
-    &:hover
-      color: $blue-lighter
+  .site-title
+    padding: 0px 0px 0px 24px
+    margin: 0px 0px 0px 0px
+    flex-grow: 1
+    display: flex
+    align-content: center
+    a
+      font-weight: 600
+      color: $blue-color
+      font-size: 24px
+      transition-duration: .3s
+      &:hover
+        color: $blue-lighter
 
-.header-menu
-  align-items: flex-end
-  padding-right: 2rem
-  display: flex
+  .header-menu
+    align-items: flex-end
+    padding-right: 2rem
+    display: flex
+
+@media screen and (max-width: 700px)
+  .header
+    grid-column: 1 / span 24
+    justify-self: stretch
+    background-color: $default-lightest
+    height: 4rem
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    box-shadow: $shadow-default
+    z-index: 100
+
+  .site-title
+    padding: 0px 0px 0px 0px
+    margin: 0px 0px 0px 0px
+    display: flex
+    align-content: center
+    a
+      font-weight: 600
+      color: $blue-color
+      font-size: 24px
+      transition-duration: .3s
+      &:hover
+        color: $blue-lighter
+
+  .header-menu
+    align-items: flex-end
+    display: none
