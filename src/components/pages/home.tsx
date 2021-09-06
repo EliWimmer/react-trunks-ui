@@ -5,7 +5,7 @@ import './styles/home.sass';
 export default function Home() {
   return (
     <>
-      <div className='home'>
+        <div className="background-home"><div className="floating-square" /></div>
         <h1 className='banner-title'>{`{ trunks-ui }`}</h1>
         <h2 className='banner-subtitle'>
           A lightweight UI framework for React. Written in TypeScript & SASS.
@@ -30,7 +30,8 @@ export default function Home() {
           as well as use it in projects myself as I move forward in web development.
         </Text>
         </div>
-      </div>
+        
+        
     </>
   );
 }
